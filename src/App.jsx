@@ -1,41 +1,28 @@
 import './componets/reset.css';
-import { BrowserRouter as Router , Route, Routes } from 'react-router-dom';
 import Index from './componets/Index.jsx';
 import AboutPage from './componets/About.jsx';
 import WorkPage from './componets/Work.jsx';
 import ContactPage from './componets/Contact.jsx';
-// import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
 
-  // const location = useLocation();
-
-  // return (
-  //   <div className="app">
-  //     <Router>
-  //       <AnimatePresence>
-  //         <Routes location={location} key={location.pathname}>
-  //           <Route path='/' element={<Index />} />
-  //           <Route path='/about' element={<AboutPage />} />
-  //           <Route path='/work' element={<WorkPage />} />
-  //           <Route path='/contact' element={<ContactPage />} />
-  //         </Routes>
-  //       </AnimatePresence>
-  //     </Router>
-  //   </div>
-  // );
+  const location = useLocation();
+  const ghPagesUrl ="/React_portfolio";
 
   return (
-    <Router>
-      <div className="app">
-        <Routes>
-          <Route path='/' element={<Index />} />
-          <Route path='/about' element={<AboutPage />} />
-          <Route path='/work' element={<WorkPage />} />
-          <Route path='/contact' element={<ContactPage />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="app">
+        <AnimatePresence>
+          <Routes location={location} key={location.pathname}>
+            <Route path={ ghPagesUrl + '/'} element={<Index />} />
+            <Route path={ ghPagesUrl + '/about' } element={<AboutPage />} />
+            <Route path={ ghPagesUrl + '/work' } element={<WorkPage />} />
+            <Route path={ ghPagesUrl + '/contact' } element={<ContactPage />} />
+            <Route path="*" element={<Index />} />
+          </Routes>
+        </AnimatePresence>
+    </div>
   );
 }
 

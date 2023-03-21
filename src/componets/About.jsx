@@ -1,27 +1,56 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import BlackSlide from '../utils/blackSlide';
 import Header from './Header';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const AboutPage = () => {
+    const aboutAreaRef = useRef(null);
+    const backImgRef = useRef(null);
+
+    // 背景の高さ調整
+    const heightAdjust = () => {
+        const aboutArea = aboutAreaRef.current;
+        let aboutAreaH = aboutArea.clientHeight;
+        let backImg = backImgRef.current;
+        let winH = window.innerHeight;
+        if (winH < aboutAreaH) {
+            backImg.style.height = "auto";
+        } else {
+            backImg.style.height = "100vh";
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', heightAdjust);
+
+        return () => window.removeEventListener('resize', heightAdjust);
+    }, [])
+
+    setTimeout(() => {
+        heightAdjust();
+    }, 50);
+
     return (
-        <div className='box'>
+        <div id='a_body' className='box' ref={backImgRef}>
             <Header />
+            <BlackSlide></BlackSlide>
             <main>
-                <div class="main-box">
-                    <div class="inner">
-                        <div class="header-title">
+                <div className="main-box" ref={aboutAreaRef}>
+                    <div className="inner">
+                        <div className="header-title">
                             <h1>About..</h1>
                             <p>自己紹介</p>
                         </div>
-                        <div class="main-content">
-                            <div class="main-left">
-                                <div class="my-img">
-                                    <img loading="lazy" src="./images/1643869900320.jpg" alt=""></img>
+                        <div className="main-content">
+                            <div className="main-left">
+                                <div className="my-img">
+                                    <img src="./images/1643869900320.jpg" alt=""></img>
                                 </div>
-                                <div class="myself">
-                                    <div class="my-title">
+                                <div className="myself">
+                                    <div className="my-title">
                                         <h3>麻生 大翔<br></br><span>Aso Hiroto</span></h3>
                                     </div>
-                                    <div class="my-info">
+                                    <div className="my-info">
                                         <dl>
                                             <dt>生年月日</dt>
                                             <dd>2000/12/06</dd>
@@ -41,30 +70,22 @@ const AboutPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="main-right">
-                                <div class="skill">
-                                    <div class="skill-title">
+                            <div className="main-right">
+                                <div className="skill">
+                                    <div className="skill-title">
                                         <h3>スキルセット</h3>
                                     </div>
-                                    <div class="skill-culm">
-                                        <div class="wrapper">
-                                            <ul class="tab">
-                                                <li class="target"><a href="#html"><img
-                                                    src="./images/html-icon.png" alt=""></img></a></li>
-                                                <li class="target"><a href="#css"><img
-                                                    src="./images/css-icon.png" alt=""></img></a></li>
-                                                <li class="target"><a href="#javascript"><img
-                                                    src="./images/js-icon.png" alt=""></img></a>
-                                                </li>
-                                                <li class="target"><a href="#jquery"><img
-                                                    src="./images/jquery-icon.png" alt=""></img></a>
-                                                </li>
-                                                <li class="target"><a href="#wordpress"><img
-                                                    src="./images/wordpress-icon.png" alt=""></img></a>
-                                                </li>
-                                            </ul>
+                                    <Tabs className="skill-culm">
+                                        <div className="wrapper">
+                                            <TabList className="tab">
+                                                <Tab><img src="./images/html-icon.png" alt="HTML"></img></Tab>
+                                                <Tab><img src="./images/css-icon.png" alt="CSS"></img></Tab>
+                                                <Tab><img src="./images/js-icon.png" alt="JavaScript"></img></Tab>
+                                                <Tab><img src="./images/react-icon.png" alt=""></img></Tab>
+                                                <Tab><img src="./images/wordpress-icon.png" alt=""></img></Tab>
+                                            </TabList>
 
-                                            <div id="html" class="area">
+                                            <TabPanel id="html" className="area">
                                                 <h2>
                                                     ★★★★☆<br></br>
                                                     W3C標準準拠したコーディングを心がけています
@@ -80,8 +101,8 @@ const AboutPage = () => {
                                                     メンテナンス性の向上等に努めるべく丁寧なコーディングを
                                                     心がけております。
                                                 </p>
-                                            </div>
-                                            <div id="css" class="area">
+                                            </TabPanel>
+                                            <TabPanel id="css" className="area">
                                                 <h2>
                                                     ★★★★☆<br></br>
                                                     SCSSの使用経験あり
@@ -96,8 +117,8 @@ const AboutPage = () => {
                                                     一人で解決し続けてきました。HTMLの欄ではW3C標準に準拠すると記載しましたが、
                                                     CSS設計に関しては未就学です。就業先の命名規則に準拠いたします。
                                                 </p>
-                                            </div>
-                                            <div id="javascript" class="area">
+                                            </TabPanel>
+                                            <TabPanel id="javascript" className="area">
                                                 <h2>
                                                     ★★★☆☆<br></br>
                                                     アプリケーションの制作経験がある
@@ -109,25 +130,21 @@ const AboutPage = () => {
                                                     独学で学びました。DOM操作や配列処理、ローカルストレージ、JSONなど最低限ではありますが
                                                     自らで１からTodoアプリの制作を行いました。
                                                 </p>
-                                            </div>
-                                            <div id="jquery" class="area">
+                                            </TabPanel>
+                                            <TabPanel id="React" className="area">
                                                 <h2>
-                                                    ★★★★☆<br></br>
-                                                    複雑なものでなければ一人で１から書くことができます
+                                                    ★★☆☆☆<br></br>
+                                                    当ポートフォリオもReactで作成されております
                                                 </h2>
                                                 <p>
-                                                    コピー＆ペーストに甘んじるのではなく
-                                                    しっかりと仕組みを理解し、１から自分で書けるように
-                                                    自ら気を付けながら勉強してきました。
-                                                    １から書けるということはカスタマイズする際の
-                                                    自由度も広がりますし、修正力も桁違いになるかなと考えた結果です。
-                                                    何より思い通りの動きを実装できたほうがやりがいを感じ、
-                                                    その過程や修正がまた楽しいからです。
-                                                    コードを見てその意味を把握する力には自信があります。
-                                                    様々なライブラリの使用経験などもあります。
+                                                    とっかかりとしてTodoアプリの作成などから行い、
+                                                    HTML,CSS,JQueryで作成された当ポートフォリオサイトを、
+                                                    Reactで書き直して改修いたしました。
+                                                    恐らくHooksなどを使いこなせば様々な機能や
+                                                    記述量を減らせたりなどすると思うのでこれからも学び続けていきたい。
                                                 </p>
-                                            </div>
-                                            <div id="wordpress" class="area">
+                                            </TabPanel>
+                                            <TabPanel id="wordpress" className="area">
                                                 <h2>
                                                     ★★★☆☆<br></br>
                                                     既存のサイトをWordpress化できます。
@@ -139,15 +156,15 @@ const AboutPage = () => {
                                                     カスタム投稿テーマの追加や、テンプレートタグを用いた
                                                     コード側からのカスタムも多少できます。
                                                 </p>
-                                            </div>
+                                            </TabPanel>
                                         </div>
-                                    </div>
+                                    </Tabs>
                                 </div>
-                                <div class="history">
-                                    <div class="history-title">
+                                <div className="history">
+                                    <div className="history-title">
                                         <h3>略歴</h3>
                                     </div>
-                                    <div class="history-culm">
+                                    <div className="history-culm">
                                         <p>
                                             北見北斗高校卒業後、地元の北海道を飛び出し
                                             各地をホテルや旅館の仕事をしながら回っていたが

@@ -1,12 +1,41 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import BlackSlide from '../utils/blackSlide';
 import Header from './Header';
 
 const ContactPage = () => {
+
+    const contactAreaRef = useRef(null);
+    const backImgRef = useRef(null);
+
+    // 背景の高さ調整
+    const heightAdjust = () => {
+        const contactArea = contactAreaRef.current;
+        let contactAreaH = contactArea.clientHeight;
+        let backImg = backImgRef.current;
+        let winH = window.innerHeight;
+        if (winH >= contactAreaH) {
+            backImg.style.height = "100vh";
+        } else {
+            backImg.style.height = "auto";
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', heightAdjust);
+
+        return () => window.removeEventListener('resize', heightAdjust);
+    }, [])
+
+    setTimeout(() => {
+        heightAdjust();
+    }, 75);
+
     return (
-        <div className='box'>
+        <div id='c_body' className='box' ref={backImgRef}>
             <Header />
+            <BlackSlide></BlackSlide>
             <main>
-                <div className="main-box">
+                <div className="main-box" ref={contactAreaRef}>
                     <div className="ct-inner">
                         <div className="header-title">
                             <h1>Contact..</h1>
