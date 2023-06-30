@@ -78,16 +78,16 @@ const AboutPage = () => {
                                     <Tabs className="skill-culm">
                                         <div className="wrapper">
                                             <TabList className="tab">
-                                                <Tab><img src="./images/html-icon.png" alt="HTML"></img></Tab>
-                                                <Tab><img src="./images/css-icon.png" alt="CSS"></img></Tab>
+                                                <Tab><img src="./images/css.png" alt="markup"></img></Tab>
                                                 <Tab><img src="./images/js-icon.png" alt="JavaScript"></img></Tab>
+                                                <Tab><img src="./images/Node_js.png" alt="Node.js"></img></Tab>
                                                 <Tab><img src="./images/react-icon.png" alt=""></img></Tab>
                                                 <Tab><img src="./images/wordpress-icon.png" alt=""></img></Tab>
                                             </TabList>
 
                                             <TabPanel id="html" className="area">
                                                 <h2>
-                                                    ★★★★☆<br></br>
+                                                    ★★☆☆☆<br></br>
                                                     W3C標準準拠したコーディングを心がけています
                                                 </h2>
                                                 <p>
@@ -102,33 +102,29 @@ const AboutPage = () => {
                                                     心がけております。
                                                 </p>
                                             </TabPanel>
-                                            <TabPanel id="css" className="area">
-                                                <h2>
-                                                    ★★★★☆<br></br>
-                                                    SCSSの使用経験あり
-                                                </h2>
-                                                <p>
-                                                    CSSにおけるコーディングとして
-                                                    カンプを見た瞬間にある構造を把握し、
-                                                    どのように書けばよいのかがある程度浮かんできて
-                                                    それをコーディングするのが得意です。
-                                                    様々なプロパティへの理解も比較的高いです。
-                                                    デザイン崩れの修正なども得意で検証ツールを用いて
-                                                    一人で解決し続けてきました。HTMLの欄ではW3C標準に準拠すると記載しましたが、
-                                                    CSS設計に関しては未就学です。就業先の命名規則に準拠いたします。
-                                                </p>
-                                            </TabPanel>
                                             <TabPanel id="javascript" className="area">
                                                 <h2>
-                                                    ★★★☆☆<br></br>
+                                                    ★★★★☆<br></br>
                                                     アプリケーションの制作経験がある
                                                 </h2>
                                                 <p>
-                                                    Webサイトを作るうえではあまりバニラのJSというのは
+                                                    訓練校ではWebサイトを作るうえではあまりバニラのJSというのは
                                                     触る機会が無かったのですが、将来的にフロントエンドエンジニアとして
                                                     活躍したいと思ったときに必須な言語となると思ったので訓練校に通っている期間に
-                                                    独学で学びました。DOM操作や配列処理、ローカルストレージ、JSONなど最低限ではありますが
-                                                    自らで１からTodoアプリの制作を行いました。
+                                                    独学で学びました。DOM操作や配列処理、ローカルストレージ、JSONなど
+                                                    自らで１からTodoアプリの制作から始めて拙いながらChatBotやOpenWeatherを用いた
+                                                    天気アプリの製作を行いました。
+                                                </p>
+                                            </TabPanel>
+                                            <TabPanel id="css" className="area">
+                                                <h2>
+                                                    ★★★☆☆<br></br>
+                                                    APIなどからデータを取得
+                                                </h2>
+                                                <p>
+                                                    主にデータを取得してフロント領域に描写する為に使用するのが主です。
+                                                    OpenAI APIを使用して、AIにLINE上で回答してもらえる
+                                                    LINE BOTを製作した際やFirebaseと連携する記事投稿アプリを製作した際に使用しています。
                                                 </p>
                                             </TabPanel>
                                             <TabPanel id="React" className="area">
@@ -166,14 +162,11 @@ const AboutPage = () => {
                                     </div>
                                     <div className="history-culm">
                                         <p>
-                                            北見北斗高校卒業後、地元の北海道を飛び出し
+                                            高校卒業後、地元の北海道を飛び出し
                                             各地をホテルや旅館の仕事をしながら回っていたが
-                                            コロナを機に失業。その際何のスキルもない人間が
-                                            簡単に仕事を失う恐ろしさを知り
-                                            スキルを用いた様々な仕事を
-                                            調べていく中でプログラミングと出会った。
-                                            現在はWEB制作会社に入社するため
-                                            職業訓練校に通い勉強中。
+                                            コロナを機に失業。様々な仕事を調べていく中でプログラミングと出会った。
+                                            現在はWEBの製作、更新を行うデザイン会社に勤務しながら
+                                            フロントエンド領域（Next.js等）とPythonを勉強中。
                                         </p>
                                     </div>
                                 </div>
