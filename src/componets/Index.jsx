@@ -100,7 +100,7 @@ const Index = () => {
                         <nav className="header-navigation">
                             <ul className="header-list">
                                 <li className="header-list-parts partsSP">
-                                    <Link className="to_a target " to="/React_portfolio/about">
+                                    <Link className="to_a target " to="/aso-portfolio/about">
                                         <p>Click to myPage</p>
                                     </Link>
                                 </li>
