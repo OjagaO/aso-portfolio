@@ -10,7 +10,7 @@ const AboutPage = () => {
     // 背景の高さ調整
     const heightAdjust = () => {
         const aboutArea = aboutAreaRef.current;
-        let aboutAreaH = aboutArea.clientHeight;
+        let aboutAreaH = aboutArea.innerHeight;
         let backImg = backImgRef.current;
         let winH = window.innerHeight;
         if (winH < aboutAreaH) {
