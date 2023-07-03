@@ -40,7 +40,7 @@ canvas {
 
 #a_body {
     color: white;
-    background: url(./images/1663240298820.png) no-repeat center;
+    background: url(../../public/images/1663240298820.png) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     z-index: 100;
@@ -48,7 +48,7 @@ canvas {
 }
 
 #w_body {
-    background: url(./images/image.work2.webp) no-repeat;
+    background: url(../../public/images/image.work2.webp) no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -58,7 +58,7 @@ canvas {
 
 #c_body {
     color: white;
-    background: url(./images//1663237349867.jpg) no-repeat center;
+    background: url(../../public/images//1663237349867.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     z-index: 10;
@@ -340,16 +340,19 @@ canvas {
 .all_modal {
     position: fixed;
     z-index: 3;
-    width: 90%;
+    width: 0;
+    height: 0;
     margin: 0 auto;
-    height: 90%;
     top: 5%;
     left: 0;
     right: 0;
     animation-duration: 1.2s;
     overflow-x: hidden;
     overflow-y: scroll;
-    transform: scale(0);
+    /* position fixedを聞かせつ為の試験 */
+    /* transform: scale(0);
+    width: 90%;
+    height: 90%; */
     background-color: rgba(0, 0, 0, 0.884);
     transition: 0.5s;
 }
@@ -368,7 +371,9 @@ canvas {
 #animatedModal12.active,
 #animatedModal13.active,
 #animatedModal14.active {
-    transform: scale(1);
+    /* transform: scale(1); */
+    width: 90%;
+    height: 90%;
 }
 
 #animatedModal1.active main {
@@ -386,15 +391,21 @@ canvas {
     font-size: 3rem;
     color: rgb(255, 255, 255);
     transform: rotate(45deg);
-    position: absolute;
-    top: 12px;
-    right: 12px;
+    position: fixed;
+    top: 6%;
+    right: 6%;
     cursor: pointer;
     transition: 0.5s;
+    z-index: 99;
+    display: none;
 }
 
 .close-modal:hover {
     transform: rotate(135deg);
+}
+
+.close-modal.active {
+    display: block;
 }
 
 .modal-box {
@@ -855,12 +866,17 @@ main {
 .tab li {
     width: auto;
     width: 20%;
+    padding: 10px;
 }
 
 .tab li img {
     width: 100%;
-    padding: 10px 10px;
     background: #00000066;
+}
+
+.tab li .node_img {
+    background-color: #fff;
+    padding: 4px 6px;
 }
 
 .react-tabs__tab-panel--selected {
@@ -922,11 +938,18 @@ a {
 .history-culm {
     box-sizing: border-box;
     width: 100%;
-    padding: 16px;
+    padding: 24px;
     font-size: 1.1rem;
     letter-spacing: 0.1rem;
-    line-height: 1.5rem;
+    line-height: 1.75rem;
     font-family: "Noto Sans JP", sans-serif;
+    /* background: rgb(50, 50, 50); */
+    background: #00000066;
+    /* margin-top: 8px; */
+}
+.history-culm p {
+    background: rgb(50, 50, 50);
+    padding: 24px;
 }
 
 @media screen and (max-width: 1024px) {

@@ -5,12 +5,19 @@ import Header from "./Header";
 const WorkPage = () => {
     function openFunc(ele) {
         const Modal = document.getElementById(ele);
+        const closeBtn = document.getElementById("close_btn");
         Modal.classList.add("active");
+        closeBtn.classList.add("active");
     }
 
     const closeFunc = (ele) => {
-        const Modal = document.getElementById(ele);
-        Modal.classList.remove("active");
+        const Modal = document.getElementsByClassName(ele);
+        const closeBtn = document.getElementById("close_btn");
+        console.log(Modal[0]);
+        for (let i = 0; i < Modal.length; i++) {
+            Modal[i].classList.remove("active");
+        }
+        closeBtn.classList.remove("active");
     };
 
     const workAreaRef = useRef(null);
@@ -19,7 +26,7 @@ const WorkPage = () => {
     // 背景の高さ調整
     const heightAdjust = () => {
         const workArea = workAreaRef.current;
-        let workAreaH = workArea.innerHeight;
+        let workAreaH = workArea.clientHeight;
         let backImg = backImgRef.current;
         let winH = window.innerHeight;
         if (winH >= workAreaH) {
@@ -169,10 +176,10 @@ const WorkPage = () => {
                 </div>
 
                 <div className="modal-sample">
+                    <button id="close_btn" className="close-modal" onClick={() => closeFunc("all_modal")}>
+                        +
+                    </button>
                     <div id="animatedModal1" className="all_modal">
-                        <button className="close-animatedModal1 close-modal" onClick={() => closeFunc("animatedModal1")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -258,9 +265,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal2" className="all_modal">
-                        <button className="close-animatedModal2 close-modal" onClick={() => closeFunc("animatedModal2")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -342,9 +346,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal3" className="all_modal">
-                        <button className="close-animatedModal3 close-modal" onClick={() => closeFunc("animatedModal3")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -422,9 +423,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal4" className="all_modal">
-                        <button className="close-animatedModal4 close-modal" onClick={() => closeFunc("animatedModal4")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -509,9 +507,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal5" className="all_modal">
-                        <button className="close-animatedModal5 close-modal" onClick={() => closeFunc("animatedModal5")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -567,9 +562,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal6" className="all_modal">
-                        <button className="close-animatedModal6 close-modal" onClick={() => closeFunc("animatedModal6")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -614,9 +606,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal7" className="all_modal">
-                        <button className="close-animatedModal7 close-modal" onClick={() => closeFunc("animatedModal7")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -657,9 +646,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal8" className="all_modal">
-                        <button className="close-animatedModal8 close-modal" onClick={() => closeFunc("animatedModal8")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -707,9 +693,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal9" className="all_modal">
-                        <button className="close-animatedModal9 close-modal" onClick={() => closeFunc("animatedModal9")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -747,9 +730,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal10" className="all_modal">
-                        <button className="close-animatedModal10 close-modal" onClick={() => closeFunc("animatedModal10")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -825,9 +805,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal11" className="all_modal">
-                        <button className="close-animatedModal11 close-modal" onClick={() => closeFunc("animatedModal11")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -888,9 +865,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal12" className="all_modal">
-                        <button className="close-animatedModal12 close-modal" onClick={() => closeFunc("animatedModal12")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
@@ -956,9 +930,6 @@ const WorkPage = () => {
                         </div>
                     </div>
                     <div id="animatedModal13" className="all_modal">
-                        <button className="close-animatedModal13 close-modal" onClick={() => closeFunc("animatedModal13")}>
-                            +
-                        </button>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
