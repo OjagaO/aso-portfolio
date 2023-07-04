@@ -42,6 +42,14 @@ const Index = () => {
         const gltfLoader = new GLTFLoader();
         let mixer;
 
+        const tick = () => {
+            renderer.render(scene, camera);
+            if (mixer) {
+                mixer.update(0.01);
+            }
+            requestAnimationFrame(tick);
+        };
+
         gltfLoader.load(
             "./models/scene.gltf",
             (gltf) => {
@@ -61,18 +69,9 @@ const Index = () => {
                 });
             },
             () => {
-                // モデルが読み込まれたらレンダリングを開始する
-                tick();
+                    tick();
             }
         );
-
-        const tick = () => {
-            renderer.render(scene, camera);
-            if (mixer) {
-                mixer.update(0.02);
-            }
-            requestAnimationFrame(tick);
-        };
 
         // light
         const ambientLight = new AmbientLight(0xffffff, 3);
