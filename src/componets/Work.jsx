@@ -47,11 +47,11 @@ const WorkPage = () => {
     }, 100);
 
     return (
-        <div id="w_body" className="box" ref={workAreaRef}>
+        <div id="w_body" className="box" ref={backImgRef}>
             <BlackSlide></BlackSlide>
             <Header />
             <main>
-                <div className="main-box">
+                <div className="main-box" ref={workAreaRef}>
                     <div className="inner">
                         <div className="header-title">
                             <h1>Works..</h1>

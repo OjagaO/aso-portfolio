@@ -98,7 +98,7 @@ const AboutPage = () => {
                                             </TabPanel>
                                             <TabPanel id="javascript" className="area">
                                                 <h2>
-                                                    ★☆☆☆☆<br></br>
+                                                    ★★☆☆☆<br></br>
                                                     基本的な型指定が可能
                                                 </h2>
                                                 <p>

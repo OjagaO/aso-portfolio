@@ -35,7 +35,7 @@ const ContactPage = () => {
             <BlackSlide></BlackSlide>
             <main>
                 <div className="main-box" ref={contactAreaRef}>
-                    <div className="ct-inner">
+                    <div className="inner">
                         <div className="header-title">
                             <h1>Contact..</h1>
                             <p>お問い合わせ</p>

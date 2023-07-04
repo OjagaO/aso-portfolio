@@ -137,7 +137,7 @@ canvas {
     width: 100%;
     border-radius: 10px;
     /* padding: 10px 20px; */
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
     transition: all 0.5s;
     background-color: linear-gradient(70deg, rgb(255, 255, 255), black);
     margin-bottom: 20px;
@@ -200,22 +200,19 @@ canvas {
 
 /* work.css */
 
-.works-link p {
-    color: #ffffff;
-}
-
-.works-link:hover {
-    transform: scale(1.3);
-}
-
 .header-list-item__title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
     color: white;
-    margin-top: 4px;
+    margin-top: 8px;
 }
 
 .mono-logo {
     height: 60%;
+    border-radius: 25px;
+    padding: 12px;
+    box-shadow: white;
+    box-shadow: 0px 0px 10px 1px rgb(255, 255, 255, 0.5), inset 0px 0px 10px 1px rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
 }
 
 .main-box {
@@ -395,7 +392,7 @@ canvas {
     top: 6%;
     right: 6%;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 3s;
     z-index: 99;
     display: none;
 }
@@ -465,18 +462,6 @@ canvas {
 }
 
 /* contact.css */
-.ct-inner {
-    margin: 0 auto;
-    max-width: 900px;
-}
-
-.contact-link p {
-    color: #ffffff;
-}
-
-.contact-link:hover {
-    transform: scale(1.3);
-}
 
 .ct-form {
     width: 100%;
@@ -701,6 +686,10 @@ textarea {
 
 main {
     flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .side-bar {
@@ -742,34 +731,38 @@ main {
 .header-list-logo {
     width: 100px;
     text-align: center;
-    transition: 0.8s;
+    transition: 0.5s;
+}
+
+.header-list-logo {
+    filter: drop-shadow(1px 1px 1px rgb(255, 255, 255));
 }
 
 .header-list-logo:hover {
-    transform: scale(1.1);
-    border: none;
+    filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4)) drop-shadow(1px -1px 1px rgba(255, 255, 255, 0.4)) drop-shadow(-1px 1px 1px rgba(255, 255, 255, 0.4)) drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.4));
 }
 
 .header-list-item {
     width: 100px;
-    height: 10vh;
     margin-top: 12vh;
     text-align: center;
     transition: 0.65s;
 }
 
-.header-list-item:hover {
+.header-list-item:hover .mono-logo {
     opacity: 0.8;
-    transform: scale(1.3);
-    border: none;
+    box-shadow: 0px 0px 10px 1px rgb(255 255 255);
 }
 
-.about-link p {
-    color: #ffffff;
+.header-list-item p {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
 }
 
-.about-link:hover {
-    transform: scale(1.3);
+.header-list-item:hover p {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .header-logo {
@@ -778,7 +771,6 @@ main {
 
 .inner {
     margin: 0 auto;
-    height: 100%;
     max-width: 900px;
 }
 
@@ -800,7 +792,7 @@ main {
 }
 
 .header-title h1 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
     font-size: 5rem;
     margin: 0.3em 0 0.1em;
 }
@@ -857,6 +849,10 @@ main {
     font-weight: 600;
 }
 
+.skill-culm {
+    height: 28em;
+}
+
 .tab {
     display: flex;
     justify-content: space-between;
@@ -890,7 +886,6 @@ main {
 
 .area {
     background: rgb(50, 50, 50);
-    transition: 0.5s;
 }
 
 ul {
@@ -953,7 +948,6 @@ a {
 }
 
 @media screen and (max-width: 1024px) {
-
     .main-logo-box {
         top: 55%;
         left: 50%;
@@ -1041,6 +1035,11 @@ a {
     }
 
     .skill-title {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .skill-culm {
         width: 90%;
         margin: 0 auto;
     }
@@ -1298,6 +1297,7 @@ a {
         height: 40px;
         padding: 0 40px;
         display: block;
+        box-shadow: none;
     }
 
     .header-list-item {
@@ -1354,10 +1354,19 @@ a {
     }
 
     .wrapper {
-        padding: 0;
+        padding: 24px 16px;
+    }
+
+    .react-tabs__tab-panel--selected {
+        padding: 24px 12px;
     }
 
     .skill-title {
+        width: 100%;
+    }
+
+    .skill-culm {
+        height: auto;
         width: 100%;
     }
 
@@ -1367,6 +1376,7 @@ a {
 
     .history-culm {
         width: 100%;
+        padding: 24px 16px;
     }
 
     .area.is-active {
