@@ -8,6 +8,11 @@ import BlackLine from "../utils/blackLine";
 
 const Index = () => {
     useEffect(() => {
+        // ローディング画面の処理
+        setTimeout(() => {
+            document.getElementById("loading_area").style.display = "none";
+        }, 8100);
+
         let innerWidth = window.innerWidth;
         let innerheight = window.innerHeight;
 
@@ -22,7 +27,7 @@ const Index = () => {
         const scene = new THREE.Scene();
 
         // camera
-        const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
         if (innerWidth < 1024) {
             camera.position.set(0, 0.55, 2);
         } else {
@@ -32,8 +37,8 @@ const Index = () => {
         // renderer
         const renderer = new THREE.WebGLRenderer({
             canvas: canvas,
-            antialias: true,
-            alpha: true,
+            antialias: false,
+            // alpha: true,
         });
         renderer.setSize(sizes.width, sizes.height);
         renderer.setPixelRatio(window.devicePixelRatio);
@@ -50,7 +55,6 @@ const Index = () => {
                 model.rotation.y = -Math.PI / 0.415;
                 model.rotation.x = -Math.PI / 0.485;
                 model.rotation.z = -Math.PI / 0.485;
-                optimizeModelRenderingSpeed(model);
                 scene.add(model);
 
                 mixer = new THREE.AnimationMixer(model);
@@ -61,7 +65,6 @@ const Index = () => {
                 });
             },
             () => {
-                // モデルが読み込まれたらレンダリングを開始する
                 tick();
             }
         );
@@ -69,8 +72,9 @@ const Index = () => {
         const tick = () => {
             renderer.render(scene, camera);
             if (mixer) {
-                mixer.update(0.02);
+                mixer.update(0.01);
             }
+            console.log(tick);
             requestAnimationFrame(tick);
         };
 
@@ -79,39 +83,44 @@ const Index = () => {
         scene.add(ambientLight);
         const pointLight = new PointLight(0xffffff, 2, 100);
         scene.add(pointLight);
-
-        // モデルの描写速度を上げる最適化関数
-        const optimizeModelRenderingSpeed = (model) => {
-            model.traverse((child) => {
-                if (child.isMesh) {
-                    child.frustumCulled = false; // フラスタムカリングを無効化
-                }
-            });
-        };
     }, []);
 
     return (
         <div>
-            <BlackLine></BlackLine>
-            <canvas id="canvas"></canvas>
-            <div id="video">
-                <div className="header-main">
-                    <div className="main-logo-box">
-                        <p className="main-logo">
-                            <img src={process.env.PUBLIC_URL + "/images/logo/toukalogo4.png"} alt="" />
-                        </p>
-                        <nav className="header-navigation">
-                            <ul className="header-list">
-                                <li className="header-list-parts partsSP">
-                                    <Link className="to_a target " to="/aso-portfolio/about">
-                                        <p>Click to myPage</p>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
+            <BlackLine>
+                <div id="loading_area">
+                    <div className="load">
+                        <p>A</p>
+                        <p>S</p>
+                        <p>O</p>
+                        <p>H</p>
+                        <p>I</p>
+                        <p>R</p>
+                        <p>O</p>
+                        <p>T</p>
+                        <p>O</p>
                     </div>
                 </div>
-            </div>
+                <canvas id="canvas"></canvas>
+                <div id="video">
+                    <div className="header-main">
+                        <div className="main-logo-box">
+                            <p className="main-logo">
+                                <img src={process.env.PUBLIC_URL + "/images/logo/toukalogo4.png"} alt="" />
+                            </p>
+                            <nav className="header-navigation">
+                                <ul className="header-list">
+                                    <li className="header-list-parts partsSP">
+                                        <Link className="to_a target " to="/aso-portfolio/about">
+                                            <p>Click to myPage</p>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </BlackLine>
         </div>
     );
 };
