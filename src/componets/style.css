@@ -274,7 +274,7 @@ canvas {
 }
 
 .line {
-    margin-top: 24px;
+    margin-top: 32px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -856,6 +856,7 @@ main {
     width: auto;
     width: 20%;
     padding: 10px;
+    cursor: pointer;
 }
 
 .tab li img {
@@ -1488,7 +1489,7 @@ a {
 
 /* splide advance */
 .work-box .splide__pagination {
-    top: 5.5rem;
+    top: 7rem;
     bottom: auto;
 }
 

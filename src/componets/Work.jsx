@@ -64,7 +64,7 @@ const WorkPage = () => {
                                 aria-label="私のお気に入りの画像集"
                                 options={{
                                     autoplay: true,
-                                    interval: 6000,
+                                    interval: 5000,
                                     drag: true,
                                     rewind: true,
                                 }}
