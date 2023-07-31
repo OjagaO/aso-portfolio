@@ -74,7 +74,6 @@ const Index = () => {
             if (mixer) {
                 mixer.update(0.01);
             }
-            console.log(tick);
             requestAnimationFrame(tick);
         };
 

@@ -67,6 +67,12 @@ const AboutPage = () => {
                                             <dt>連絡先</dt>
                                             <dd>ahiroto1234@gmail.com</dd>
                                         </dl>
+                                        <dl>
+                                            <dt>趣味</dt>
+                                            <dd>美味しいものを探す <br />
+                                                スマホゲーム <br />
+                                                </dd>
+                                        </dl>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +166,8 @@ const AboutPage = () => {
                                             コロナを機に失業。様々な仕事を調べていく中でプログラミングと出会った。
                                             職業訓練校でマークアップとWorrdpressを学び現在はWEBの製作、
                                             更新を行うデザイン会社に勤務しながら
-                                            フロントエンド領域（Next.js等）とPythonを勉強中。
+                                            フロントエンド領域（Next.js等）を勉強中。
+                                            Udemyを受講して学んだことをZennに投稿するという学習サイクルを取っている。
                                         </p>
                                     </div>
                                 </div>
