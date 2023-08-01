@@ -354,34 +354,13 @@ canvas {
     opacity: 0;
 }
 
-#animatedModal1.active,
-#animatedModal2.active,
-#animatedModal3.active,
-#animatedModal4.active,
-#animatedModal5.active,
-#animatedModal6.active,
-#animatedModal7.active,
-#animatedModal8.active,
-#animatedModal9.active,
-#animatedModal10.active,
-#animatedModal11.active,
-#animatedModal12.active,
-#animatedModal13.active,
-#animatedModal14.active,
-#animatedModal15.active {
-    /* transform: scale(1); */
-    width: 90%;
-    height: 90%;
-    opacity: 1;
-}
-
 #animatedModal1.active main {
     overflow: hidden;
 }
 
 .modal-content {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     width: 100%;
     margin-left: 0;
 }
@@ -398,6 +377,7 @@ canvas {
     z-index: 99;
     display: none;
     opacity: 0;
+    text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, 0px 1px 0 #000000, 0-1px 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000;
 }
 
 .close-modal.active {
@@ -406,10 +386,11 @@ canvas {
 }
 
 .modal-box {
-    width: calc(50% - 32px);
+    /* width: calc(50% - 32px); */
     margin: 16px;
     padding: 12px;
     background-color: #3232327d;
+    color: #fff;
 }
 
 .modal-box a {
@@ -455,10 +436,6 @@ canvas {
     width: 90%;
     margin-left: 5%;
     line-height: 1.65rem;
-}
-
-.modal-img {
-    width: 50%;
 }
 
 .modal-img img {
@@ -603,7 +580,7 @@ textarea {
 }
 
 .black_sheet {
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(0, 0, 0) 25%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgb(0, 0, 0) 25%);
 }
 
 .extend_line {
@@ -1595,4 +1572,111 @@ body {
         transform: rotate(-180deg);
         opacity: 0;
     }
+}
+
+/* Transition実験 */
+
+.photo-thumb {
+    view-transition-name: photo-example;
+    contain: paint;
+}
+
+/* 詳細画面 */
+.photo-detail {
+    view-transition-name: photo-example;
+    contain: paint;
+}
+
+.transition_first1 {
+    view-transition-name: photo-example1;
+    contain: paint;
+}
+/* .transition_first2 {
+    view-transition-name: photo-exampleX;
+    contain: paint;
+} */
+.transition_first3,
+.transition_second3 {
+    view-transition-name: photo-example3;
+    contain: paint;
+}
+/* .transition_first4,
+.transition_second4 {
+    view-transition-name: photo-example4;
+    contain: paint;
+}
+.transition_first5,
+.transition_second5 {
+    view-transition-name: photo-example5;
+    contain: paint;
+}
+.transition_first6,
+.transition_second6 {
+    view-transition-name: photo-example6;
+    contain: paint;
+}
+.transition_first7,
+.transition_second7 {
+    view-transition-name: photo-example7;
+    contain: paint;
+}
+.transition_first8,
+.transition_second8 {
+    view-transition-name: photo-example8;
+    contain: paint;
+}
+.transition_first9,
+.transition_second9 {
+    view-transition-name: photo-example9;
+    contain: paint;
+}
+.transition_first10,
+.transition_second10 {
+    view-transition-name: photo-example10;
+    contain: paint;
+}
+.transition_first11,
+.transition_second11 {
+    view-transition-name: photo-example11;
+    contain: paint;
+}
+.transition_first12,
+.transition_second12 {
+    view-transition-name: photo-example12;
+    contain: paint;
+}
+.transition_first13,
+.transition_second13 {
+    view-transition-name: photo-example13;
+    contain: paint;
+}
+.transition_first14,
+.transition_second14 {
+    view-transition-name: photo-example14;
+    contain: paint;
+}
+.transition_first15,
+.transition_second15 {
+    view-transition-name: photo-example15;
+    contain: paint;
+} */
+
+#animatedModal1,
+#animatedModal2,
+#animatedModal3,
+#animatedModal4,
+#animatedModal5,
+#animatedModal6,
+#animatedModal7,
+#animatedModal8,
+#animatedModal9,
+#animatedModal10,
+#animatedModal11,
+#animatedModal12,
+#animatedModal13,
+#animatedModal14,
+#animatedModal15 {
+    width: 90%;
+    height: 90%;
+    opacity: 1;
 }

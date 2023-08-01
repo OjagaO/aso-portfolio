@@ -5,22 +5,23 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
 
 const WorkPage = () => {
-    function openFunc(ele) {
-        const Modal = document.getElementById(ele);
-        const closeBtn = document.getElementById("close_btn");
-        Modal.classList.add("active");
-        closeBtn.classList.add("active");
-    }
+    // モーダルウィンドウの切り替え
+    // function openFunc(ele) {
+    //     const Modal = document.getElementById(ele);
+    //     const closeBtn = document.getElementById("close_btn");
+    //     Modal.classList.add("active");
+    //     closeBtn.classList.add("active");
+    // }
 
-    const closeFunc = (ele) => {
-        const Modal = document.getElementsByClassName(ele);
-        const closeBtn = document.getElementById("close_btn");
-        console.log(Modal[0]);
-        for (let i = 0; i < Modal.length; i++) {
-            Modal[i].classList.remove("active");
-        }
-        closeBtn.classList.remove("active");
-    };
+    // const closeFunc = (ele) => {
+    //     const Modal = document.getElementsByClassName(ele);
+    //     const closeBtn = document.getElementById("close_btn");
+    //     console.log(Modal[0]);
+    //     for (let i = 0; i < Modal.length; i++) {
+    //         Modal[i].classList.remove("active");
+    //     }
+    //     closeBtn.classList.remove("active");
+    // };
 
     const workAreaRef = useRef(null);
     const backImgRef = useRef(null);
@@ -48,6 +49,31 @@ const WorkPage = () => {
         heightAdjust();
     }, 100);
 
+    // Page View Transitionのお試し
+    function openFunc(ele, ele2) {
+        document.startViewTransition(() => {
+            document.getElementById(ele).hidden = false;
+            document.getElementById(ele2).hidden = true;
+        });
+        const closeBtn = document.getElementById("close_btn");
+        closeBtn.classList.add("active");
+    }
+
+    function closeFunc(ele, ele2) {
+        document.startViewTransition(() => {
+            const closeBtn = document.getElementById("close_btn");
+            const Modal = document.getElementsByClassName(ele);
+            const item = document.getElementsByClassName(ele2);
+            for (let i = 0; i < Modal.length; i++) {
+                Modal[i].hidden = true;
+            }
+            for (let i = 0; i < item.length; i++) {
+                item[i].hidden = false;
+            }
+            closeBtn.classList.remove("active");
+        });
+    }
+
     return (
         <div id="w_body" className="box" ref={backImgRef}>
             <BlackSlide></BlackSlide>
@@ -63,8 +89,7 @@ const WorkPage = () => {
                             <Splide
                                 aria-label="私のお気に入りの画像集"
                                 options={{
-                                    autoplay: true,
-                                    interval: 5000,
+                                    autoplay: false,
                                     drag: true,
                                     rewind: true,
                                 }}
@@ -76,38 +101,38 @@ const WorkPage = () => {
                                     </div>
                                     <ul className="line">
                                         <li className=" work-item">
-                                            <p id="demo05" className="work-item_p" onClick={() => openFunc("animatedModal5")}>
-                                                <img src="./images/resize-todo.png" alt="thumbnail of site"></img>
+                                            <p id="demo05" className="work-item_p" onClick={() => openFunc("animatedModal5", "demo05")}>
+                                                <img src="./images/resize-todo.png" alt="thumbnail of site" className="transition_first5"></img>
                                                 <span className="work-item-sentence">|　　Todo List　　|</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo10" className="work-item_p" onClick={() => openFunc("animatedModal10")}>
-                                                <img src="./images/weathr-sc.png" alt=""></img>
+                                            <p id="demo10" className="work-item_p" onClick={() => openFunc("animatedModal10", "demo10")}>
+                                                <img src="./images/weathr-sc.png" alt="" className="transition_first10"></img>
                                                 <span className="work-item-sentence">|Weather Sapporo|</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo12" className="work-item_p" onClick={() => openFunc("animatedModal12")}>
-                                                <img src="./images/screencapture-ojagao-github-io-vanillaTodo-2023-01-07-13_47_12.png" alt=""></img>
+                                            <p id="demo12" className="work-item_p" onClick={() => openFunc("animatedModal12", "demo12")}>
+                                                <img src="./images/screencapture-ojagao-github-io-vanillaTodo-2023-01-07-13_47_12.png" alt="" className="transition_first12"></img>
                                                 <span className="work-item-sentence">| Vanilla Todo |</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo13" className="work-item_p" onClick={() => openFunc("animatedModal13")}>
-                                                <img src="./images/screencapture-ojagao-github-io-chatbot-2023-01-12-15_06_52.png" alt=""></img>
+                                            <p id="demo13" className="work-item_p" onClick={() => openFunc("animatedModal13", "demo13")}>
+                                                <img src="./images/screencapture-ojagao-github-io-chatbot-2023-01-12-15_06_52.png" alt="" className="transition_first13"></img>
                                                 <span className="work-item-sentence">|chat BOT|</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo14" className="work-item_p" onClick={() => openFunc("animatedModal14")}>
-                                                <img src="./images/pokemon_top.png" alt=""></img>
+                                            <p id="demo14" className="work-item_p" onClick={() => openFunc("animatedModal14", "demo14")}>
+                                                <img src="./images/pokemon_top.png" alt="" className="transition_first14"></img>
                                                 <span className="work-item-sentence">| ポケモン図鑑 |</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo15" className="work-item_p" onClick={() => openFunc("animatedModal15")}>
-                                                <img src="./images/microCMS_top.png" alt=""></img>
+                                            <p id="demo15" className="work-item_p" onClick={() => openFunc("animatedModal15", "demo15")}>
+                                                <img src="./images/microCMS_top.png" alt="" className="transition_first15"></img>
                                                 <span className="work-item-sentence">| microCMS |</span>
                                             </p>
                                         </li>
@@ -119,51 +144,51 @@ const WorkPage = () => {
                                         <p>使用言語（HTML,CSS,JQuery</p>
                                     </div>
                                     <ul className="line">
-                                        <li className="work-item">
-                                            <p id="demo01" className="work-item_p" onClick={() => openFunc("animatedModal1")}>
-                                                <img src="images/scshot-kita.png" alt="thumbnail of site"></img>
+                                        <li id="demo01" className="work-item">
+                                            <p className="work-item_p" onClick={() => openFunc("animatedModal1", "demo01")}>
+                                                <img src="images/scshot-kita.png" alt="thumbnail of site" className="transition_first1"></img>
                                                 <span className="work-item-sentence">|　　北関東学院　　|</span>
                                             </p>
                                         </li>
                                         <li className="work-item">
-                                            <p id="demo02" className="work-item_p" onClick={() => openFunc("animatedModal2")}>
-                                                <img src="./images/scshot-cat2.png" alt="thumbnail of site"></img>
+                                            <p id="demo02" className="work-item_p" onClick={() => openFunc("animatedModal2", "demo02")}>
+                                                <img src="./images/scshot-cat2.png" alt="thumbnail of site" className="transition_first2"></img>
                                                 <span className="work-item-sentence">|猫カフェ～ごろごろ～|</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo03" className="work-item_p" onClick={() => openFunc("animatedModal3")}>
-                                                <img src="./images/diz-screenshot.png" alt="thumbnail of site"></img>
+                                            <p id="demo03" className="work-item_p" onClick={() => openFunc("animatedModal3", "demo03")}>
+                                                <img src="./images/diz-screenshot.png" alt="thumbnail of site" className="transition_first3"></img>
                                                 <span className="work-item-sentence">|　株式会社 Diz　|</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo04" className="work-item_p" onClick={() => openFunc("animatedModal4")}>
-                                                <img src="./images/sizingHunter.png" alt="thumbnail of site"></img>
+                                            <p id="demo04" className="work-item_p" onClick={() => openFunc("animatedModal4", "demo04")}>
+                                                <img src="./images/sizingHunter.png" alt="thumbnail of site" className="transition_first4"></img>
                                                 <span className="work-item-sentence">|　　Hunter.　　|</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo09" className="work-item_p" onClick={() => openFunc("animatedModal9")}>
-                                                <img src="./images/Csalon.top.png" alt="thumbnail of site"></img>
+                                            <p id="demo09" className="work-item_p" onClick={() => openFunc("animatedModal9", "demo09")}>
+                                                <img src="./images/Csalon.top.png" alt="thumbnail of site" className="transition_first9"></img>
                                                 <span className="work-item-sentence">|　north C east　|</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo06" className="work-item_p" onClick={() => openFunc("animatedModal6")}>
-                                                <img src="./images/kitasalon.top.png" alt=""></img>
+                                            <p id="demo06" className="work-item_p" onClick={() => openFunc("animatedModal6", "demo06")}>
+                                                <img src="./images/kitasalon.top.png" alt="" className="transition_first6"></img>
                                                 <span className="work-item-sentence">|　NORTH C EAST　|</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo07" className="work-item_p" onClick={() => openFunc("animatedModal7")}>
-                                                <img src="./images/kitakanndou.top.png" alt="thumbnail of site"></img>
+                                            <p id="demo07" className="work-item_p" onClick={() => openFunc("animatedModal7", "demo07")}>
+                                                <img src="./images/kitakanndou.top.png" alt="thumbnail of site" className="transition_first7"></img>
                                                 <span className="work-item-sentence">|　　北関堂　　|</span>
                                             </p>
                                         </li>
                                         <li className=" work-item">
-                                            <p id="demo08" className="work-item_p" onClick={() => openFunc("animatedModal8")}>
-                                                <img src="./images/shrine.top.png" alt=""></img>
+                                            <p id="demo08" className="work-item_p" onClick={() => openFunc("animatedModal8", "demo08")}>
+                                                <img src="./images/shrine.top.png" alt="" className="transition_first8"></img>
                                                 <span className="work-item-sentence">|　　北関神社　　|</span>
                                             </p>
                                         </li>
@@ -176,8 +201,8 @@ const WorkPage = () => {
                                     </div>
                                     <ul className="line">
                                         <li className=" work-item">
-                                            <p id="demo11" className="work-item_p" onClick={() => openFunc("animatedModal11")}>
-                                                <img src="./images/diz-screenshot.png" alt="thumbnail of site"></img>
+                                            <p id="demo11" className="work-item_p" onClick={() => openFunc("animatedModal11", "demo11")}>
+                                                <img src="./images/diz-screenshot.png" alt="thumbnail of site" className="transition_first11"></img>
                                                 <span className="work-item-sentence">| Wordpress化した株式会社Diz |</span>
                                             </p>
                                         </li>
@@ -189,16 +214,18 @@ const WorkPage = () => {
                 </div>
 
                 <div className="modal-sample">
-                    <button id="close_btn" className="close-modal" onClick={() => closeFunc("all_modal")}>
+                    <button id="close_btn" className="close-modal" onClick={() => closeFunc("all_modal", "work-item")}>
                         +
                     </button>
-                    <div id="animatedModal1" className="all_modal">
+                    <div id="animatedModal1" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         北関東学院<br></br>
-                                        <a href="https://ojagao.github.io/kitakanto/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/kitakanto/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -273,17 +300,20 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/screencapture-ojagao-github-io-kitakanto-2022-11-05-15_18_28.png" alt=""></img>
+                                <img src="images/scshot-kita.png" alt="thumbnail of site" className="transition_first1"></img>
+                                {/* <img src="./images/screencapture-ojagao-github-io-kitakanto-2022-11-05-15_18_28.png" alt=""></img> */}
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal2" className="all_modal">
+                    <div id="animatedModal2" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         猫カフェ～ごろごろ～<br></br>
-                                        <a href="https://ojagao.github.io/catcafe/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/catcafe/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -354,17 +384,20 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/screencapture-ojagao-github-io-catcafe-survice-html-2022-11-07-10_57_38.png" alt=""></img>
+                                <img src="./images/scshot-cat2.png" alt="thumbnail of site" className="transition_first2"></img>
+                                {/* <img src="./images/screencapture-ojagao-github-io-catcafe-survice-html-2022-11-07-10_57_38.png" alt="" className="transition_first2"></img> */}
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal3" className="all_modal">
+                    <div id="animatedModal3" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         株式会社 Diz<br></br>
-                                        <a href="https://ojagao.github.io/Diz/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/Diz/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -435,13 +468,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal4" className="all_modal">
+                    <div id="animatedModal4" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         Hunter.<br></br>
-                                        <a href="https://ojagao.github.io/Hunter/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/Hunter/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -519,13 +554,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal5" className="all_modal">
+                    <div id="animatedModal5" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         Todo List<br></br>
-                                        <a href="https://ojagao.github.io/TodoReact/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/TodoReact/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -574,13 +611,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal6" className="all_modal">
+                    <div id="animatedModal6" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         NORTH C EAST<br></br>
-                                        <a href="https://ojagao.github.io/kitasalon/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/kitasalon/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -618,13 +657,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal7" className="all_modal">
+                    <div id="animatedModal7" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         北関堂<br></br>
-                                        <a href="https://ojagao.github.io/wagashi/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/wagashi/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -658,13 +699,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal8" className="all_modal">
+                    <div id="animatedModal8" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         北関神社<br></br>
-                                        <a href="https://ojagao.github.io/shrine/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/shrine/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -705,13 +748,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal9" className="all_modal">
+                    <div id="animatedModal9" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         north C east<br></br>
-                                        <a href="https://ojagao.github.io/kitasalon2/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/kitasalon2/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -742,13 +787,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal10" className="all_modal">
+                    <div id="animatedModal10" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         Weather Sapporo<br></br>
-                                        <a href="https://ojagao.github.io/weather/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/weather/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -817,13 +864,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal11" className="all_modal">
+                    <div id="animatedModal11" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         Wordpress化した株式会社 Diz<br></br>
-                                        <a href="http://program21.wp.xdomain.jp/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="http://program21.wp.xdomain.jp/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -877,13 +926,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal12" className="all_modal">
+                    <div id="animatedModal12" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         Vanilla Todoリスト<br></br>
-                                        <a href="https://ojagao.github.io/vanillaTodo/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/vanillaTodo/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -942,13 +993,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal13" className="all_modal">
+                    <div id="animatedModal13" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         chat BOT<br></br>
-                                        <a href="https://ojagao.github.io/chatbot/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://ojagao.github.io/chatbot/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -1001,13 +1054,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal14" className="all_modal">
+                    <div id="animatedModal14" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         ポケモン図鑑<br></br>
-                                        <a href="https://pokemon-book-7zo024pvq-ojagao.vercel.app/" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://pokemon-book-7zo024pvq-ojagao.vercel.app/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -1017,7 +1072,13 @@ const WorkPage = () => {
                                     </dl>
                                     <dl>
                                         <dt>◆制作の経緯と流れ</dt>
-                                        <dd>Zennの方で情報発信しています。<a href="https://zenn.dev/h_aso/articles/2220c857f5b74c" target="_blank" rel="noreferrer">こちら</a>から記事に飛ぶことができます。</dd>
+                                        <dd>
+                                            Zennの方で情報発信しています。
+                                            <a href="https://zenn.dev/h_aso/articles/2220c857f5b74c" target="_blank" rel="noreferrer">
+                                                こちら
+                                            </a>
+                                            から記事に飛ぶことができます。
+                                        </dd>
                                     </dl>
                                     <dl>
                                         <dt>◆こだわり</dt>
@@ -1025,7 +1086,8 @@ const WorkPage = () => {
                                             ・最初にも書いた通り英語表記のポケモン図鑑から日本語表記に手探りでたどり着いた点
                                             <br></br>
                                             ・ページ切り替えのボタンやヘッダーのデザインをポケモンに寄せたり、
-                                            <br/>ホバーアクションにもポケモン要素を組み込んだ点<br></br>
+                                            <br />
+                                            ホバーアクションにもポケモン要素を組み込んだ点<br></br>
                                         </dd>
                                     </dl>
                                     <dl>
@@ -1040,10 +1102,7 @@ const WorkPage = () => {
                                     </dl>
                                     <dl>
                                         <dt>◆制作を通してのコメント</dt>
-                                        <dd>
-                                            あくまでベースはUdemy講座で受講しながら製作したのでベースの制作自体はスムーズにいったが、
-                                            自分でアレンジを加えていこうとすると理解度を試されているようでとても良い経験になった。
-                                        </dd>
+                                        <dd>あくまでベースはUdemy講座で受講しながら製作したのでベースの制作自体はスムーズにいったが、 自分でアレンジを加えていこうとすると理解度を試されているようでとても良い経験になった。</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -1052,13 +1111,15 @@ const WorkPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="animatedModal15" className="all_modal">
+                    <div id="animatedModal15" className="all_modal" hidden>
                         <div className="modal-content">
                             <div className="modal-box">
                                 <div className="modal-title">
                                     <h2>
                                         microCMS<br></br>
-                                        <a href="https://micro-cms-sample.vercel.app/?vercelToolbarCode=_OYXUjWFliWbvLn" target="_blank" rel="noreferrer">実際のサイトはこちら→</a>
+                                        <a href="https://micro-cms-sample.vercel.app/?vercelToolbarCode=_OYXUjWFliWbvLn" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
                                     </h2>
                                 </div>
                                 <div className="modal-info">
@@ -1068,8 +1129,15 @@ const WorkPage = () => {
                                     </dl>
                                     <dl>
                                         <dt>◆制作の経緯と流れ</dt>
-                                        <dd>上記の通り気になったので触ってみて、過去に作成した静的サイトのBlogの部分をheadlessCMS化したのが今回のサイトになります。<br />
-                                            Zennの方で情報発信しています。<a href="https://zenn.dev/h_aso/articles/a281a7b4a2d72e" target="_blank" rel="noreferrer">こちら</a>から記事に飛ぶことができます。</dd>
+                                        <dd>
+                                            上記の通り気になったので触ってみて、過去に作成した静的サイトのBlogの部分をheadlessCMS化したのが今回のサイトになります。
+                                            <br />
+                                            Zennの方で情報発信しています。
+                                            <a href="https://zenn.dev/h_aso/articles/a281a7b4a2d72e" target="_blank" rel="noreferrer">
+                                                こちら
+                                            </a>
+                                            から記事に飛ぶことができます。
+                                        </dd>
                                     </dl>
                                     <dl>
                                         <dt>◆こだわり</dt>
@@ -1077,7 +1145,8 @@ const WorkPage = () => {
                                             ・参考にさせていただいた記事はJavaScriptで書かれていたのでTypeScriptに書き直した点
                                             <br></br>
                                             ・実際に想定できそうな既存の静的サイトのお知らせの部分だけを
-                                            <br/>もっと簡単に更新できるようにしたいというニーズを満たすようなことが可能になった点<br></br>
+                                            <br />
+                                            もっと簡単に更新できるようにしたいというニーズを満たすようなことが可能になった点<br></br>
                                         </dd>
                                     </dl>
                                     <dl>
