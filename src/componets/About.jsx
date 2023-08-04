@@ -129,7 +129,7 @@ const AboutPage = () => {
                                             <TabPanel id="React" className="area">
                                                 <h2>
                                                     ★★★★☆<br></br>
-                                                    当ポートフォリオもReactで作成されております
+                                                    当ポートフォリオもReactで作成
                                                 </h2>
                                                 <p>
                                                     とっかかりとしてTodoアプリの作成などから行い、
@@ -166,7 +166,7 @@ const AboutPage = () => {
                                             コロナを機に失業。様々な仕事を調べていく中でプログラミングと出会った。
                                             職業訓練校でマークアップとWorrdpressを学び現在はWEBの製作、
                                             更新を行うデザイン会社に勤務しながら
-                                            フロントエンド領域（Next.js等）を勉強中。
+                                            フロントエンド領域（Next.js,TypeScript等）を勉強中。
                                             Udemyを受講して学んだことをZennに投稿するという学習サイクルを取っている。
                                         </p>
                                     </div>

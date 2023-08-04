@@ -223,6 +223,10 @@ canvas {
     font-family: "Noto Sans JP", sans-serif;
     padding: 32px 0 16px;
     letter-spacing: 0.2em;
+    transition: .5s;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: .3s;
 }
 
 .title h3 {
@@ -274,11 +278,15 @@ canvas {
 }
 
 .line {
-    margin-top: 32px;
+    margin-top: 54px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
+    transform: translateX(30px);
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .2s;
 }
 
 .work-item {
@@ -352,6 +360,9 @@ canvas {
     transition-delay: 0.5s;
     transition: 1s;
     opacity: 0;
+    width: 90%;
+    height: 90%;
+    opacity: 1;
 }
 
 #animatedModal1.active main {
@@ -386,9 +397,8 @@ canvas {
 }
 
 .modal-box {
-    /* width: calc(50% - 32px); */
     margin: 16px;
-    padding: 12px;
+    padding: 12px 10vw 40px;
     background-color: #3232327d;
     color: #fff;
 }
@@ -439,7 +449,7 @@ canvas {
 }
 
 .modal-img {
-    width: 50%;
+    width: calc(100% - 50px);
 }
 
 .modal-img img {
@@ -847,8 +857,16 @@ main {
     padding: 4px 6px;
 }
 
-.react-tabs__tab-panel--selected {
-    padding: 30px 20px;
+.area {
+    width: 100%;
+    background: rgb(50, 50, 50);
+    opacity: 0;
+    transition-delay: .3s;
+    transition: .5s;
+}
+
+.area.react-tabs__tab-panel--selected {
+    opacity: 1;
 }
 
 .react-tabs__tab--selected {
@@ -856,9 +874,7 @@ main {
     border: none;
 }
 
-.area {
-    background: rgb(50, 50, 50);
-}
+
 
 ul {
     list-style: none;
@@ -881,14 +897,14 @@ a {
 
 .area h2 {
     font-size: 1.3rem;
-    margin: 0 0 20px 10px;
+    padding: 16px 0px 8px 16px;
     line-height: 1.5em;
     border-bottom: 1px solid #ddd;
     font-family: serif;
 }
 
 .area p {
-    padding: 0 10px;
+    padding: 24px;
     letter-spacing: 0.05rem;
     line-height: 1.5rem;
     font-family: "Noto Sans JP", sans-serif;
@@ -1060,7 +1076,7 @@ a {
     .line {
         display: block;
         height: auto;
-        margin-top: 0;
+        margin-top: 72px;
     }
 
     .work-item {
@@ -1407,9 +1423,6 @@ a {
     }
 
     /* modal */
-    .modal-img {
-        display: none;
-    }
 
     .modal-box {
         width: 95%;
@@ -1478,10 +1491,23 @@ a {
 
 #work-box .splide__arrow--next {
     right: 10vw;
+    background: none;
+    font-size: 1.5rem;
 }
 
 #work-box .splide__arrow--prev {
     left: calc(10vw + 100px);
+    background: none;
+    font-size: 1.5rem;
+}
+@media screen and (max-width: 1400px) {
+    #work-box .splide__arrow--next {
+        right: 3vw;
+    }
+
+    #work-box .splide__arrow--prev {
+        left: calc(3vw + 100px);
+    }
 }
 @media screen and (max-width: 600px) {
     #work-box .splide__arrow--next {
@@ -1582,7 +1608,7 @@ body.active {
     }
 }
 
-/* Transition実験 */
+/* Modal Transition */
 
 .photo_thumb {
     aspect-ratio: 2/1;
@@ -1591,95 +1617,86 @@ body.active {
     object-fit: cover;
     object-position: center;
     width: 100%;
+    contain: paint;
 }
 
-/* 詳細画面 */
 .photo_detail {
-    aspect-ratio: 2/1;
+    aspect-ratio: 2.1/1;
     display: block;
     width: 100%;
     height: auto;
     object-fit: cover;
     object-position: center;
-  }
+    contain: paint;
+}
 
 .transition_first1 {
     view-transition-name: photo-example-1;
-    contain: paint;
 }
 .transition_first2 {
     view-transition-name: photo-example-2;
-    contain: paint;
 }
 .transition_first3 {
     view-transition-name: photo-example-3;
-    contain: paint;
 }
 .transition_first4 {
     view-transition-name: photo-example-4;
-    contain: paint;
 }
 .transition_first5 {
     view-transition-name: photo-example-5;
-    contain: paint;
 }
 .transition_first6 {
     view-transition-name: photo-example-6;
-    contain: paint;
 }
 .transition_first7 {
     view-transition-name: photo-example-7;
-    contain: paint;
 }
 .transition_first8 {
     view-transition-name: photo-example-8;
-    contain: paint;
 }
 .transition_first9 {
     view-transition-name: photo-example-9;
-    contain: paint;
 }
 .transition_first10 {
     view-transition-name: photo-example-10;
-    contain: paint;
 }
 .transition_first11 {
     view-transition-name: photo-example-11;
-    contain: paint;
 }
 .transition_first12 {
     view-transition-name: photo-example-12;
-    contain: paint;
 }
 .transition_first13 {
     view-transition-name: photo-example-13;
-    contain: paint;
 }
 .transition_first14 {
     view-transition-name: photo-example-14;
-    contain: paint;
 }
 .transition_first15 {
     view-transition-name: photo-example-15;
-    contain: paint;
 }
 
-#animatedModal1,
-#animatedModal2,
-#animatedModal3,
-#animatedModal4,
-#animatedModal5,
-#animatedModal6,
-#animatedModal7,
-#animatedModal8,
-#animatedModal9,
-#animatedModal10,
-#animatedModal11,
-#animatedModal12,
-#animatedModal13,
-#animatedModal14,
-#animatedModal15 {
-    width: 90%;
-    height: 90%;
+::view-transition-group(*) {
+    animation-duration: .4s;
+}
+
+/* スライダー(splide)CSS */
+#w_body .splide__pagination__page {
+    border-radius: 0;
+    width: 32px;
+    height: 4px;
+    margin: 20px 32px;
+}
+
+#w_body .splide__arrow svg {
+    fill: #fff;
+}
+
+.splide__slide.is-active > .title {
     opacity: 1;
+    transform: translateY(0);
+}
+.splide__slide.is-active > .line {
+    opacity: 1;
+    transform: translateX(0);
 }

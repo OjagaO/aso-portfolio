@@ -5,23 +5,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
 
 const WorkPage = () => {
-    // モーダルウィンドウの切り替え
-    // function openFunc(ele) {
-    //     const Modal = document.getElementById(ele);
-    //     const closeBtn = document.getElementById("close_btn");
-    //     Modal.classList.add("active");
-    //     closeBtn.classList.add("active");
-    // }
-
-    // const closeFunc = (ele) => {
-    //     const Modal = document.getElementsByClassName(ele);
-    //     const closeBtn = document.getElementById("close_btn");
-    //     console.log(Modal[0]);
-    //     for (let i = 0; i < Modal.length; i++) {
-    //         Modal[i].classList.remove("active");
-    //     }
-    //     closeBtn.classList.remove("active");
-    // };
 
     const workAreaRef = useRef(null);
     const backImgRef = useRef(null);
@@ -70,6 +53,7 @@ const WorkPage = () => {
             }
             document.getElementById("work-box").hidden = false;
             closeBtn.classList.remove("active");
+            document.querySelector("body").classList.remove("active");
         });
     }
 
@@ -748,7 +732,8 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/screencapture-ojagao-github-io-shrine-2022-12-07-11_40_08.png" alt=""></img>
+                                {/* <img src="./images/screencapture-ojagao-github-io-shrine-2022-12-07-11_40_08.png" alt=""></img> */}
+                                <img src="./images/shrine.top.png" alt="thumbnail of site" className="transition_first8 photo_detail"></img>
                             </div>
                         </div>
                     </div>
@@ -787,7 +772,8 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/screencapture-ojagao-github-io-kitasalon2-2022-12-07-11_38_31.png" alt=""></img>
+                                {/* <img src="./images/screencapture-ojagao-github-io-kitasalon2-2022-12-07-11_38_31.png" alt=""></img> */}
+                                <img src="./images/Csalon.top.png" alt="thumbnail of site" className="transition_first9 photo_detail"></img>
                             </div>
                         </div>
                     </div>
@@ -864,7 +850,8 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/weather-sp.png" alt=""></img>
+                                {/* <img src="./images/weather-sp.png" alt=""></img> */}
+                                <img src="./images/weathr-sc.png" alt="thumbnail of site" className="transition_first10 photo_detail"></img>
                             </div>
                         </div>
                     </div>
@@ -926,7 +913,8 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/screencapture-ojagao-github-io-Diz-2022-11-07-15_30_23.png" alt=""></img>
+                                {/* <img src="./images/screencapture-ojagao-github-io-Diz-2022-11-07-15_30_23.png" alt=""></img> */}
+                                <img src="./images/diz-screenshot.png" alt="thumbnail of site" className="transition_first11 photo_detail"></img>
                             </div>
                         </div>
                     </div>
@@ -993,7 +981,8 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/sp-vanillaTodo.png" alt=""></img>
+                                {/* <img src="./images/sp-vanillaTodo.png" alt=""></img> */}
+                                <img src="./images/screencapture-ojagao-github-io-vanillaTodo-2023-01-07-13_47_12.png" alt="thumbnail of site" className="transition_first12 photo_detail"></img>
                             </div>
                         </div>
                     </div>
@@ -1054,7 +1043,8 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/screencapture-ojagao-github-io-chatbot-2023-01-12-15_05_35.png" alt=""></img>
+                                {/* <img src="./images/screencapture-ojagao-github-io-chatbot-2023-01-12-15_05_35.png" alt=""></img> */}
+                                <img src="./images/screencapture-ojagao-github-io-chatbot-2023-01-12-15_06_52.png" alt="thumbnail of site" className="transition_first13 photo_detail"></img>
                             </div>
                         </div>
                     </div>
@@ -1111,7 +1101,8 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/pokemon.png" alt=""></img>
+                                {/* <img src="./images/pokemon.png" alt=""></img> */}
+                                <img src="./images/pokemon_top.png" alt="thumbnail of site" className="transition_first14 photo_detail"></img>
                             </div>
                         </div>
                     </div>
@@ -1172,7 +1163,8 @@ const WorkPage = () => {
                                 </div>
                             </div>
                             <div className="modal-img">
-                                <img src="./images/screenshot-beautysalon.jpeg" alt=""></img>
+                                {/* <img src="./images/screenshot-beautysalon.jpeg" alt=""></img> */}
+                                <img src="./images/microCMS_top.png" alt="thumbnail of site" className="transition_first15 photo_detail"></img>
                             </div>
                         </div>
                     </div>
