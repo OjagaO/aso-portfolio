@@ -10,7 +10,7 @@ const AboutPage = () => {
     // 背景の高さ調整
     const heightAdjust = () => {
         const aboutArea = aboutAreaRef.current;
-        let aboutAreaH = aboutArea.innerHeight;
+        let aboutAreaH = aboutArea.clientHeight;
         let backImg = backImgRef.current;
         let winH = window.innerHeight;
         if (winH < aboutAreaH) {
@@ -67,6 +67,12 @@ const AboutPage = () => {
                                             <dt>連絡先</dt>
                                             <dd>ahiroto1234@gmail.com</dd>
                                         </dl>
+                                        <dl>
+                                            <dt>趣味</dt>
+                                            <dd>美味しいものを探す <br />
+                                                スマホゲーム <br />
+                                                </dd>
+                                        </dl>
                                     </div>
                                 </div>
                             </div>
@@ -78,42 +84,34 @@ const AboutPage = () => {
                                     <Tabs className="skill-culm">
                                         <div className="wrapper">
                                             <TabList className="tab">
-                                                <Tab><img src="./images/css.png" alt="markup"></img></Tab>
-                                                <Tab><img src="./images/js-icon.png" alt="JavaScript"></img></Tab>
-                                                <Tab><img src="./images/Node_js.png" alt="Node.js"></img></Tab>
+                                                <Tab><img src="./images/markup.jpg" alt="markup"></img></Tab>
+                                                <Tab><img src="./images/TS_icon.svg" alt="TypeScript"></img></Tab>
+                                                <Tab><img src="./images/Node_js.png" alt="Node.js" className='node_img'></img></Tab>
                                                 <Tab><img src="./images/react-icon.png" alt=""></img></Tab>
                                                 <Tab><img src="./images/wordpress-icon.png" alt=""></img></Tab>
                                             </TabList>
 
-                                            <TabPanel id="html" className="area">
+                                            <TabPanel id="markup" className="area">
                                                 <h2>
-                                                    ★★☆☆☆<br></br>
-                                                    W3C標準準拠したコーディングを心がけています
+                                                    ★★★★★<br></br>
+                                                    静的ページのマークアップには自信があります
                                                 </h2>
                                                 <p>
-                                                    実装したいことを実現するためにW3C標準から
-                                                    外れてしまうこともありますし、
-                                                    jQueryを導入している場合は、
-                                                    その仕様上W3C標準に準拠できない
-                                                    可能性もありますが、できる限り検索エンジンの最適化（SEO）・
-                                                    アクセシビリティの向上・
-                                                    データ軽量化による読み込み時間短縮・
-                                                    メンテナンス性の向上等に努めるべく丁寧なコーディングを
-                                                    心がけております。
+                                                    レスポンシブは当然として様々なJSライブラリを使用してモダンな動きのサイトを作成できます。
+                                                    契約上ライブラリが使えないという場合も、ある程度自分で一から書くことも可能です。
+                                                    製作スピードに関しては１ページのLP（h:8000px程度）デザインカンプがあがって画像の準備もある場合だと1.5~2人日という程度です。
                                                 </p>
                                             </TabPanel>
                                             <TabPanel id="javascript" className="area">
                                                 <h2>
-                                                    ★★★★☆<br></br>
-                                                    アプリケーションの制作経験がある
+                                                    ★★☆☆☆<br></br>
+                                                    基本的な型指定が可能
                                                 </h2>
                                                 <p>
-                                                    訓練校ではWebサイトを作るうえではあまりバニラのJSというのは
-                                                    触る機会が無かったのですが、将来的にフロントエンドエンジニアとして
-                                                    活躍したいと思ったときに必須な言語となると思ったので訓練校に通っている期間に
-                                                    独学で学びました。DOM操作や配列処理、ローカルストレージ、JSONなど
-                                                    自らで１からTodoアプリの制作から始めて拙いながらChatBotやOpenWeatherを用いた
-                                                    天気アプリの製作を行いました。
+                                                    JavaScriptの知識に型指定の知識が申し訳なく付いている状態です。
+                                                    以前書いていたJavaScriptのコードに随時型指定をして使っている状態で、
+                                                    TypeScriptをうまく使いこなしているという感覚が湧いていません。
+                                                    TypeScriptに関しては初心者レベルです。
                                                 </p>
                                             </TabPanel>
                                             <TabPanel id="css" className="area">
@@ -123,21 +121,22 @@ const AboutPage = () => {
                                                 </h2>
                                                 <p>
                                                     主にデータを取得してフロント領域に描写する為に使用するのが主です。
+                                                    OpenWeatherAPIを使用して天気アプリを作ったり、
                                                     OpenAI APIを使用して、AIにLINE上で回答してもらえる
-                                                    LINE BOTを製作した際やFirebaseと連携する記事投稿アプリを製作した際に使用しています。
+                                                    LINE BOTを製作した際やFirebaseと連携する記事投稿アプリを製作した際に使用しました。
                                                 </p>
                                             </TabPanel>
                                             <TabPanel id="React" className="area">
                                                 <h2>
-                                                    ★★☆☆☆<br></br>
-                                                    当ポートフォリオもReactで作成されております
+                                                    ★★★★☆<br></br>
+                                                    当ポートフォリオもReactで作成
                                                 </h2>
                                                 <p>
                                                     とっかかりとしてTodoアプリの作成などから行い、
                                                     HTML,CSS,JQueryで作成された当ポートフォリオサイトを、
                                                     Reactで書き直して改修いたしました。
-                                                    恐らくHooksなどを使いこなせば様々な機能や
-                                                    記述量を減らせたりなどすると思うのでこれからも学び続けていきたい。
+                                                    Next.jsを学んでいなかったのでフレームワークを使用していない状態ですが、
+                                                    以前microCMSを触ってみた時にNext.jsで作成したのでそれからも学習しています。
                                                 </p>
                                             </TabPanel>
                                             <TabPanel id="wordpress" className="area">
@@ -165,8 +164,10 @@ const AboutPage = () => {
                                             高校卒業後、地元の北海道を飛び出し
                                             各地をホテルや旅館の仕事をしながら回っていたが
                                             コロナを機に失業。様々な仕事を調べていく中でプログラミングと出会った。
-                                            現在はWEBの製作、更新を行うデザイン会社に勤務しながら
-                                            フロントエンド領域（Next.js等）とPythonを勉強中。
+                                            職業訓練校でマークアップとWorrdpressを学び現在はWEBの製作、
+                                            更新を行うデザイン会社に勤務しながら
+                                            フロントエンド領域（Next.js,TypeScript等）を勉強中。
+                                            Udemyを受講して学んだことをZennに投稿するという学習サイクルを取っている。
                                         </p>
                                     </div>
                                 </div>

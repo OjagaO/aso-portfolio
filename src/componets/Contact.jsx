@@ -9,7 +9,7 @@ const ContactPage = () => {
     // 背景の高さ調整
     const heightAdjust = () => {
         const contactArea = contactAreaRef.current;
-        let contactAreaH = contactArea.innerHeight;
+        let contactAreaH = contactArea.clientHeight;
         let backImg = backImgRef.current;
         let winH = window.innerHeight;
         if (winH >= contactAreaH) {
@@ -27,7 +27,7 @@ const ContactPage = () => {
 
     setTimeout(() => {
         heightAdjust();
-    }, 75);
+    }, 100);
 
     return (
         <div id="c_body" className="box" ref={backImgRef}>
@@ -35,7 +35,7 @@ const ContactPage = () => {
             <BlackSlide></BlackSlide>
             <main>
                 <div className="main-box" ref={contactAreaRef}>
-                    <div className="ct-inner">
+                    <div className="inner">
                         <div className="header-title">
                             <h1>Contact..</h1>
                             <p>お問い合わせ</p>
