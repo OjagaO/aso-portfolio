@@ -88,7 +88,6 @@ const Index = () => {
                 mixer.update(0.01);
             }
             requestAnimationFrame(tick);
-            console.log(isUnmounted)
         };
 
         // light
