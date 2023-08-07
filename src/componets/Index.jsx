@@ -125,7 +125,8 @@ const Index = () => {
                             </p>
                             <nav className="header-navigation">
                                 <div className="header-list">
-                                    <button className="header-list-parts partsSP" onClick="cleanup()">
+                                    {/* onClick="cleanup()" */}
+                                    <button className="header-list-parts partsSP">
                                         <Link className="to_a target" to="/aso-portfolio/about">
                                             <p>Click to myPage</p>
                                         </Link>
