@@ -1,10 +1,9 @@
-import React from 'react';
-import './style.css'
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./style.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-
-    let handleClickSp = function(){
+    let handleClickSp = function () {
         const openBtn = document.getElementById("btn-area");
         const spHeader = document.getElementById("open-hd");
         openBtn.classList.toggle("swich");
@@ -15,37 +14,40 @@ const Header = () => {
         <div className="side-header">
             <nav className="side-bar">
                 <div className="header-logo-box">
-                    <Link className="index-link header-list-logo target" to="/aso-portfolio/"><img
-                        className="header-logo" src='./images/logo/toukalogo4.png' alt="logo"></img></Link>
-                    <Link className="about-link header-list-item target to_a" to="/aso-portfolio/about"><img
-                        className="mono-logo" src='./images/logo/image.man.png' alt="logo"></img>
+                    <Link className="index-link header-list-logo target" to="/aso-portfolio/">
+                        <img className="header-logo" src="./images/logo/toukalogo4.png" alt="logo"></img>
+                    </Link>
+                    <Link className="about-link header-list-item target to_a" to="/aso-portfolio/about">
+                        <img className="mono-logo" src="./images/logo/image.man.png" alt="logo"></img>
                         <p className="header-list-item__title">About</p>
                     </Link>
-                    <Link className="works-link header-list-item target to_w" to="/aso-portfolio/work"><img
-                        className="mono-logo" src='./images/logo/image.notepc.png' alt="logo"></img>
+                    <Link className="works-link header-list-item target to_w" to="/aso-portfolio/work">
+                        <img className="mono-logo" src="./images/logo/image.notepc.png" alt="logo"></img>
                         <p className="header-list-item__title">Works</p>
                     </Link>
-                    <Link className="contact-link header-list-item target to_c" to="/aso-portfolio/contact"><img
-                        className="mono-logo" src='./images/logo/image.phone.png' alt="logo"></img>
+                    <Link className="contact-link header-list-item target to_c" to="/aso-portfolio/contact">
+                        <img className="mono-logo" src="./images/logo/image.phone.png" alt="logo"></img>
                         <p className="header-list-item__title">Contact</p>
                     </Link>
                     <div className="hamburger">
                         <div className="hamburger-btn">
                             <div id="btn-area" onClick={handleClickSp}>
-                                <span></span><span></span><span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
                         </div>
                         <div id="open-hd">
-                            <Link className="open-item target to_a" to="/aso-portfolio/about"><img className="mono-logo"
-                                src='./images/logo/image.man.png' alt="logo"></img>
+                            <Link className="open-item target to_a" to="/aso-portfolio/about">
+                                <img className="mono-logo" src="./images/logo/image.man.png" alt="logo"></img>
                                 <p className="">About</p>
                             </Link>
-                            <Link className="open-item target to_w" to="/aso-portfolio/work"><img className="mono-logo"
-                                src='./images/logo/image.notepc.png' alt="logo"></img>
+                            <Link className="open-item target to_w" to="/aso-portfolio/work">
+                                <img className="mono-logo" src="./images/logo/image.notepc.png" alt="logo"></img>
                                 <p className="">Works</p>
                             </Link>
-                            <Link className="open-item target to_c" to="/aso-portfolio/contact"><img className="mono-logo"
-                                src='./images/logo/image.phone.png' alt="logo"></img>
+                            <Link className="open-item target to_c" to="/aso-portfolio/contact">
+                                <img className="mono-logo" src="./images/logo/image.phone.png" alt="logo"></img>
                                 <p className="">Contact</p>
                             </Link>
                         </div>
@@ -54,6 +56,6 @@ const Header = () => {
             </nav>
         </div>
     );
-}
+};
 
 export default Header;
