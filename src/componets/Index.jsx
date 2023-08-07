@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../componets/style.css";
 import { Link } from "react-router-dom";
 import * as THREE from "three";
@@ -7,6 +7,8 @@ import { AmbientLight, PointLight } from "three";
 import BlackLine from "../utils/blackLine";
 
 const Index = () => {
+    const [isUnmounted, setIsUnmounted] = useState(false);
+
     useEffect(() => {
         // ローディング画面の処理
         setTimeout(() => {
@@ -20,6 +22,17 @@ const Index = () => {
             width: innerWidth,
             height: innerheight,
         };
+
+        const cleanup = () => {
+            if (model) {
+              // モデルをアンマウントする処理をここに追加
+              scene.remove(model); // モデルを3Dシーンから削除
+              model = null; // モデルの参照を削除
+              mixer.stopAllAction(); // モデルのアニメーションを停止
+            }
+            setIsUnmounted(true);
+          };
+
         const canvas = document.getElementById("canvas");
         let model;
 
@@ -50,6 +63,7 @@ const Index = () => {
         gltfLoader.load(
             "./models/scene.gltf",
             (gltf) => {
+                if (isUnmounted) return; // コンポーネントがアンマウントされていた場合は処理を中止
                 model = gltf.scene;
                 model.scale.set(0.28, 0.28, 0.28);
                 model.rotation.y = -Math.PI / 0.415;
@@ -75,6 +89,7 @@ const Index = () => {
                 mixer.update(0.01);
             }
             requestAnimationFrame(tick);
+            console.log(isUnmounted)
         };
 
         // light
@@ -82,6 +97,8 @@ const Index = () => {
         scene.add(ambientLight);
         const pointLight = new PointLight(0xffffff, 2, 100);
         scene.add(pointLight);
+
+        return cleanup;
     }, []);
 
     return (
@@ -110,7 +127,7 @@ const Index = () => {
                             <nav className="header-navigation">
                                 <ul className="header-list">
                                     <li className="header-list-parts partsSP">
-                                        <Link className="to_a target " to="/aso-portfolio/about">
+                                        <Link className="to_a target " to="/aso-portfolio/about" onClick="cleanup()">
                                             <p>Click to myPage</p>
                                         </Link>
                                     </li>
