@@ -124,13 +124,13 @@ const Index = () => {
                                 <img src={process.env.PUBLIC_URL + "/images/logo/toukalogo4.png"} alt="" />
                             </p>
                             <nav className="header-navigation">
-                                <ul className="header-list">
-                                    <li className="header-list-parts partsSP">
-                                        <Link className="to_a target " to="/aso-portfolio/about" onClick="cleanup()">
+                                <div className="header-list">
+                                    <button className="header-list-parts partsSP" onClick="cleanup()">
+                                        <Link className="to_a target" to="/aso-portfolio/about">
                                             <p>Click to myPage</p>
                                         </Link>
-                                    </li>
-                                </ul>
+                                    </button>
+                                </div>
                             </nav>
                         </div>
                     </div>
