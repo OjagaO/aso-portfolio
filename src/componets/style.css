@@ -373,7 +373,9 @@ canvas {
     display: flex;
     flex-direction: column-reverse;
     width: 100%;
-    margin-left: 0;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .close-modal {
@@ -397,7 +399,6 @@ canvas {
 }
 
 .modal-box {
-    margin: 16px;
     padding: 12px 10vw 40px;
     background-color: #3232327d;
     color: #fff;
@@ -449,12 +450,7 @@ canvas {
 }
 
 .modal-img {
-    width: calc(100% - 50px);
-}
-
-.modal-img img {
-    width: calc(100% - 32px);
-    margin: 16px;
+    width: 100%;
 }
 
 /* contact.css */
@@ -1425,8 +1421,9 @@ a {
     /* modal */
 
     .modal-box {
-        width: 95%;
+        width: 100%;
         margin: 0 auto;
+        padding: 12px 12px 40px;
     }
 
     /* contact */
@@ -1674,6 +1671,9 @@ body.active {
 }
 .transition_first15 {
     view-transition-name: photo-example-15;
+}
+.transition_first16 {
+    view-transition-name: photo-example-16;
 }
 
 ::view-transition-group(*) {

@@ -70,7 +70,7 @@ const WorkPage = () => {
                         </div>
                         <div id="work-box">
                             <Splide
-                                aria-label="私のお気に入りの画像集"
+                                aria-label="ポートフォリオまとめ"
                                 options={{
                                     autoplay: false,
                                     drag: true,
@@ -116,7 +116,13 @@ const WorkPage = () => {
                                         <li className=" work-item">
                                             <p id="demo15" className="work-item_p" onClick={() => openFunc("animatedModal15")}>
                                                 <img src="./images/microCMS_top.png" alt="thumbnail of site" className="transition_first15 photo_thumb"></img>
-                                                <span className="work-item-sentence">| microCMS |</span>
+                                                <span className="work-item-sentence">| microCMS sample |</span>
+                                            </p>
+                                        </li>
+                                        <li className=" work-item">
+                                            <p id="demo16" className="work-item_p" onClick={() => openFunc("animatedModal16")}>
+                                                <img src="./images/micro-blog.webp" alt="thumbnail of site" className="transition_first16 photo_thumb"></img>
+                                                <span className="work-item-sentence">| microCMS Blog |</span>
                                             </p>
                                         </li>
                                     </ul>
@@ -1165,6 +1171,69 @@ const WorkPage = () => {
                             <div className="modal-img">
                                 {/* <img src="./images/screenshot-beautysalon.jpeg" alt=""></img> */}
                                 <img src="./images/microCMS_top.png" alt="thumbnail of site" className="transition_first15 photo_detail"></img>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="animatedModal16" className="all_modal" hidden>
+                        <div className="modal-content">
+                            <div className="modal-box">
+                                <div className="modal-title">
+                                    <h2>
+                                        microCMS<br></br>
+                                        <a href="https://micro-blog-kohl.vercel.app/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div className="modal-info">
+                                    <dl>
+                                        <dt>◆作品概要</dt>
+                                        <dd>前回microCMSの概要を把握したので実際にブログを作りながら機能を学んだもの</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>◆制作の経緯と流れ</dt>
+                                        <dd>
+                                            上記の通り以前学んだことを一から形にしてブログを作ってみたのが今回の作品になります。
+                                            <br />
+                                            Zennの方で情報発信しています。
+                                            <a href="https://zenn.dev/h_aso/articles/a281a7b4a2d72e" target="_blank" rel="noreferrer">
+                                                こちら
+                                            </a>
+                                            から記事に飛ぶことができます。
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>◆こだわり</dt>
+                                        <dd>
+                                            ・React hooksを使用してサイドバーの追従を実装した点
+                                            <br></br>
+                                            ・流行りと言うには遅れていますがニューモフィズムっぽい感じのブログデザインにした点
+                                            <br />
+                                            ・各コンポーネントに分けて実装しているので管理が比較的楽な点<br></br>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>◆改善点・苦労した点</dt>
+                                        <dd>
+                                            ・設計の段階での見通しが甘くpropsの受け渡しが多くなってしまったのでuseContext等を用いて管理するべきだったかもしれない点
+                                            <br></br>
+                                            ・当初自分が作りたかった設計が後々調べていく中で破綻した際にコードが冗長になり、可読性も下がり、共通パーツの強みを活かしきれていない点。
+                                            <br></br>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>◆制作を通してのコメント</dt>
+                                        <dd>
+                                            microCMS様のブログを模写するような形で機能をなぞっていったのですが、Next.jsのルーティングがまだあまりしっくりきていないせいか
+                                            あまり自分の想定通りの挙動なならずに納得のいかない仕上がりになってしまったので、事前に記事等を読み、流れをなんとなくではなく全てイメージしてから
+                                            設計して制作に入ろうと思わされました。
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div className="modal-img">
+                                {/* <img src="./images/screenshot-beautysalon.jpeg" alt=""></img> */}
+                                <img src="./images/micro-blog.webp" alt="thumbnail of site" className="transition_first16 photo_detail"></img>
                             </div>
                         </div>
                     </div>
