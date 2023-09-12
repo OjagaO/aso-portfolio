@@ -16,7 +16,7 @@ function App() {
                 <Route path={ghPagesUrl + "/about"} element={<AboutPage />} />
                 <Route path={ghPagesUrl + "/work"} element={<WorkPage />} />
                 <Route path={ghPagesUrl + "/contact"} element={<ContactPage />} />
-                <Route path="*" element={<Navigate to={ghPagesUrl + "/"} />} />
+                <Route path={ghPagesUrl + "/*"} element={<Navigate to={ghPagesUrl + "/"} />} />
             </Routes>
         </div>
     );

@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import { SiBookstack, SiGithub, SiZenn } from "react-icons/si";
 
 const Header = () => {
     let handleClickSp = function () {
@@ -29,6 +30,25 @@ const Header = () => {
                         <img className="mono-logo" src="./images/logo/image.phone.png" alt="logo"></img>
                         <p className="header-list-item__title">Contact</p>
                     </Link>
+                    <div className="sns-pc">
+                        <ul className="sns-link-box">
+                            <li className="sns-link">
+                                <Link to="https://zenn.dev/h_aso" target="_blank">
+                                    <SiZenn />
+                                </Link>
+                            </li>
+                            <li className="sns-link">
+                                <Link to="https://zenn.dev/h_aso" target="_blank">
+                                    <SiGithub />
+                                </Link>
+                            </li>
+                            <li className="sns-link">
+                                <Link to="https://zenn.dev/h_aso" target="_blank">
+                                    <SiBookstack />
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                     <div className="hamburger">
                         <div className="hamburger-btn">
                             <div id="btn-area" onClick={handleClickSp}>
@@ -50,6 +70,25 @@ const Header = () => {
                                 <img className="mono-logo" src="./images/logo/image.phone.png" alt="logo"></img>
                                 <p className="">Contact</p>
                             </Link>
+                            <div className="sns-sp">
+                                <ul className="sns-link-box">
+                                    <li className="sns-link">
+                                        <Link to="https://zenn.dev/h_aso" target="_blank">
+                                            <SiZenn />
+                                        </Link>
+                                    </li>
+                                    <li className="sns-link">
+                                        <Link to="https://github.com/OjagaO" target="_blank">
+                                            <SiGithub />
+                                        </Link>
+                                    </li>
+                                    <li className="sns-link">
+                                        <Link to="https://zenn.dev/h_aso" target="_blank">
+                                            <SiBookstack />
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -73,7 +73,7 @@ const WorkPage = () => {
                                 aria-label="ポートフォリオまとめ"
                                 options={{
                                     autoplay: false,
-                                    drag: true,
+                                    drag: false,
                                     rewind: true,
                                 }}
                             >

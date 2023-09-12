@@ -109,13 +109,13 @@ canvas {
 }
 
 .main-logo {
-    width: 20vw;
+    width: 30vw;
     margin: 0 auto;
     height: 100%;
 }
 
 .main-logo img {
-    width: 70%;
+    width: 55%;
     height: 50%;
     display: flex;
     margin: 0 auto;
@@ -134,39 +134,51 @@ canvas {
 }
 
 .header-list-parts {
-    width: 100%;
-    border-radius: 10px;
-    /* padding: 10px 20px; */
     font-family: "Cormorant Garamond", serif;
     transition: all 0.5s;
-    background-color: linear-gradient(70deg, rgb(255, 255, 255), black);
-    margin-bottom: 20px;
+    background: linear-gradient(70deg,#ffffff42,#00000042);
+    border-radius: 10px;
+    font-family: Cormorant Garamond,serif;
+    transition: all .5s;
+    width: 90%;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .header-list-parts a {
     color: #fff;
     font-weight: 300;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     transition: all 0.3s;
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 1));
     display: block;
     position: relative;
+    padding: 12px;
 }
 
 .header-list-parts a::after {
     position: absolute;
-    content: "";
-    bottom: -16px;
-    left: 0;
-    height: 1px;
-    width: 0;
-    background-color: white;
-    transition: 0.8s;
+    content: "→";
+    bottom: 20%;
+    left: 80%;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: 0.5s;
+    padding: 4px;
+    font-size: 32px;
+    opacity: 0;
 }
 
 .header-list-parts a:hover::after {
-    width: 100%;
-    transition-delay: 0.4s;
+    left: calc(100% - 52px);
+    transition-delay: 0s;
+    background-color: #ffffff2b;
+    opacity: 1;
 }
 
 .liner {
@@ -721,7 +733,6 @@ main {
 
 .header-list-item {
     width: 100px;
-    margin-top: 12vh;
     text-align: center;
     transition: 0.65s;
 }
@@ -744,6 +755,24 @@ main {
 
 .header-logo {
     width: 100%;
+}
+
+.sns-pc {
+    display: block;
+    width: 100%;
+}
+.sns-sp {
+    display: none;
+    width: 100%;
+}
+
+.sns-link-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sns-link a {
+    color: white;
 }
 
 .inner {
@@ -961,7 +990,6 @@ a {
     }
 
     .header-list-parts a {
-        padding: 0;
         overflow: visible;
     }
 
@@ -1139,7 +1167,12 @@ a {
     .black_sliderL {
         left: 0;
     }
-
+    .sns-pc {
+        display: none;
+    }
+    .sns-sp {
+        display: block;
+    }
     .header-list-item span:nth-child(1) {
         opacity: 0;
         transform: translate(-50%, -100%);
@@ -1253,6 +1286,7 @@ a {
         position: fixed;
         bottom: 120%;
         transition: 0.5s;
+        padding: 40px;
     }
 
     #open-hd.swich {
@@ -1686,6 +1720,9 @@ body.active {
     width: 32px;
     height: 4px;
     margin: 20px 32px;
+}
+#w_body .splide__pagination__page.is-active {
+    background: #008eff;
 }
 
 #w_body .splide__arrow svg {
