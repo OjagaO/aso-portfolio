@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/aso-portfolio/static/css/main.5727984e.css",
-    "main.js": "/aso-portfolio/static/js/main.a26270e7.js",
+    "main.css": "/aso-portfolio/static/css/main.b2c5af07.css",
+    "main.js": "/aso-portfolio/static/js/main.b747287a.js",
     "static/js/787.0f6f6f82.chunk.js": "/aso-portfolio/static/js/787.0f6f6f82.chunk.js",
     "static/media/1663240298820.png": "/aso-portfolio/static/media/1663240298820.b6f6971ccd5867cc8918.png",
     "static/media/1663237349867.jpg": "/aso-portfolio/static/media/1663237349867.f1324e20a9979d2f9342.jpg",
     "static/media/image.work2.webp": "/aso-portfolio/static/media/image.work2.a1467785bc69aa5743d5.webp",
     "index.html": "/aso-portfolio/index.html",
-    "main.5727984e.css.map": "/aso-portfolio/static/css/main.5727984e.css.map",
-    "main.a26270e7.js.map": "/aso-portfolio/static/js/main.a26270e7.js.map",
+    "main.b2c5af07.css.map": "/aso-portfolio/static/css/main.b2c5af07.css.map",
+    "main.b747287a.js.map": "/aso-portfolio/static/js/main.b747287a.js.map",
     "787.0f6f6f82.chunk.js.map": "/aso-portfolio/static/js/787.0f6f6f82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5727984e.css",
-    "static/js/main.a26270e7.js"
+    "static/css/main.b2c5af07.css",
+    "static/js/main.b747287a.js"
   ]
 }

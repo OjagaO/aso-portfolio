@@ -38,7 +38,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className="sns-link">
-                                <Link to="https://zenn.dev/h_aso" target="_blank">
+                                <Link to="https://github.com/OjagaO" target="_blank">
                                     <SiGithub />
                                 </Link>
                             </li>
