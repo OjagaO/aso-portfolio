@@ -84,46 +84,46 @@ const WorkPage = () => {
                                     </div>
                                     <ul className="line">
                                         <li className=" work-item">
-                                            <input id="demo05" className="work-item_p" onClick={() => openFunc("animatedModal5")}>
+                                            <button id="demo05" className="work-item_p" onClick={() => openFunc("animatedModal5")}>
                                                 <img src="./images/resize-todo.png" alt="thumbnail of site" className="transition_first5 photo_thumb"></img>
                                                 <span className="work-item-sentence">|　　Todo List　　|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo10" className="work-item_p" onClick={() => openFunc("animatedModal10")}>
+                                            <button id="demo10" className="work-item_p" onClick={() => openFunc("animatedModal10")}>
                                                 <img src="./images/weathr-sc.png" alt="thumbnail of site" className="transition_first10 photo_thumb"></img>
                                                 <span className="work-item-sentence">|Weather Sapporo|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo12" className="work-item_p" onClick={() => openFunc("animatedModal12")}>
+                                            <button id="demo12" className="work-item_p" onClick={() => openFunc("animatedModal12")}>
                                                 <img src="./images/screencapture-ojagao-github-io-vanillaTodo-2023-01-07-13_47_12.png" alt="thumbnail of site" className="transition_first12 photo_thumb"></img>
                                                 <span className="work-item-sentence">| Vanilla Todo |</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo13" className="work-item_p" onClick={() => openFunc("animatedModal13")}>
+                                            <button id="demo13" className="work-item_p" onClick={() => openFunc("animatedModal13")}>
                                                 <img src="./images/screencapture-ojagao-github-io-chatbot-2023-01-12-15_06_52.png" alt="thumbnail of site" className="transition_first13 photo_thumb"></img>
                                                 <span className="work-item-sentence">|chat BOT|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo14" className="work-item_p" onClick={() => openFunc("animatedModal14")}>
+                                            <button id="demo14" className="work-item_p" onClick={() => openFunc("animatedModal14")}>
                                                 <img src="./images/pokemon_top.png" alt="thumbnail of site" className="transition_first14 photo_thumb"></img>
                                                 <span className="work-item-sentence">| ポケモン図鑑 |</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo15" className="work-item_p" onClick={() => openFunc("animatedModal15")}>
+                                            <button id="demo15" className="work-item_p" onClick={() => openFunc("animatedModal15")}>
                                                 <img src="./images/microCMS_top.png" alt="thumbnail of site" className="transition_first15 photo_thumb"></img>
                                                 <span className="work-item-sentence">| microCMS sample |</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo16" className="work-item_p" onClick={() => openFunc("animatedModal16")}>
+                                            <button id="demo16" className="work-item_p" onClick={() => openFunc("animatedModal16")}>
                                                 <img src="./images/micro-blog.webp" alt="thumbnail of site" className="transition_first16 photo_thumb"></img>
                                                 <span className="work-item-sentence">| microCMS Blog |</span>
-                                            </input>
+                                            </button>
                                         </li>
                                     </ul>
                                 </SplideSlide>
@@ -140,46 +140,46 @@ const WorkPage = () => {
                                             </p>
                                         </li>
                                         <li className="work-item">
-                                            <input id="demo02" className="work-item_p" onClick={() => openFunc("animatedModal2")}>
+                                            <button id="demo02" className="work-item_p" onClick={() => openFunc("animatedModal2")}>
                                                 <img src="./images/scshot-cat2.png" alt="thumbnail of site" className="transition_first2 photo_thumb"></img>
                                                 <span className="work-item-sentence">|猫カフェ～ごろごろ～|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo03" className="work-item_p" onClick={() => openFunc("animatedModal3")}>
+                                            <button id="demo03" className="work-item_p" onClick={() => openFunc("animatedModal3")}>
                                                 <img src="./images/diz-screenshot.png" alt="thumbnail of site" className="transition_first3 photo_thumb"></img>
                                                 <span className="work-item-sentence">|　株式会社 Diz　|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo04" className="work-item_p" onClick={() => openFunc("animatedModal4")}>
+                                            <button id="demo04" className="work-item_p" onClick={() => openFunc("animatedModal4")}>
                                                 <img src="./images/sizingHunter.png" alt="thumbnail of site" className="transition_first4 photo_thumb"></img>
                                                 <span className="work-item-sentence">|　　Hunter.　　|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo09" className="work-item_p" onClick={() => openFunc("animatedModal9")}>
+                                            <button id="demo09" className="work-item_p" onClick={() => openFunc("animatedModal9")}>
                                                 <img src="./images/Csalon.top.png" alt="thumbnail of site" className="transition_first9 photo_thumb"></img>
                                                 <span className="work-item-sentence">|　north C east　|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo06" className="work-item_p" onClick={() => openFunc("animatedModal6")}>
+                                            <button id="demo06" className="work-item_p" onClick={() => openFunc("animatedModal6")}>
                                                 <img src="./images/kitasalon.top.png" alt="thumbnail of site" className="transition_first6 photo_thumb"></img>
                                                 <span className="work-item-sentence">|　NORTH C EAST　|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo07" className="work-item_p" onClick={() => openFunc("animatedModal7")}>
+                                            <button id="demo07" className="work-item_p" onClick={() => openFunc("animatedModal7")}>
                                                 <img src="./images/kitakanndou.top.png" alt="thumbnail of site" className="transition_first7 photo_thumb"></img>
                                                 <span className="work-item-sentence">|　　北関堂　　|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                         <li className=" work-item">
-                                            <input id="demo08" className="work-item_p" onClick={() => openFunc("animatedModal8")}>
+                                            <button id="demo08" className="work-item_p" onClick={() => openFunc("animatedModal8")}>
                                                 <img src="./images/shrine.top.png" alt="thumbnail of site" className="transition_first8 photo_thumb"></img>
                                                 <span className="work-item-sentence">|　　北関神社　　|</span>
-                                            </input>
+                                            </button>
                                         </li>
                                     </ul>
                                 </SplideSlide>
@@ -190,10 +190,10 @@ const WorkPage = () => {
                                     </div>
                                     <ul className="line">
                                         <li className=" work-item">
-                                            <input id="demo11" className="work-item_p" onClick={() => openFunc("animatedModal11")}>
+                                            <button id="demo11" className="work-item_p" onClick={() => openFunc("animatedModal11")}>
                                                 <img src="./images/diz-screenshot.png" alt="thumbnail of site" className="transition_first11 photo_thumb"></img>
                                                 <span className="work-item-sentence">| Wordpress化した株式会社Diz |</span>
-                                            </input>
+                                            </button>
                                         </li>
                                     </ul>
                                 </SplideSlide>
