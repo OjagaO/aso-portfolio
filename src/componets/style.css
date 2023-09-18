@@ -316,10 +316,6 @@ canvas {
     margin: 0 0 4% 4%;
 }
 
-.work-item_p {
-    display: inline;
-}
-
 .work-item img {
     width: 100%;
     height: 100%;
@@ -1664,56 +1660,56 @@ body.active {
 }
 
 .transition_first1 {
-    view-transition-name: photo-example-1;
+    view-transition-name: photo-1;
 }
 .transition_first2 {
-    view-transition-name: photo-example-2;
+    view-transition-name: photo-2;
 }
 .transition_first3 {
-    view-transition-name: photo-example-3;
+    view-transition-name: photo-3;
 }
 .transition_first4 {
-    view-transition-name: photo-example-4;
+    view-transition-name: photo-4;
 }
 .transition_first5 {
-    view-transition-name: photo-example-5;
+    view-transition-name: photo-5;
 }
 .transition_first6 {
-    view-transition-name: photo-example-6;
+    view-transition-name: photo-6;
 }
 .transition_first7 {
-    view-transition-name: photo-example-7;
+    view-transition-name: photo-7;
 }
 .transition_first8 {
-    view-transition-name: photo-example-8;
+    view-transition-name: photo-8;
 }
 .transition_first9 {
-    view-transition-name: photo-example-9;
+    view-transition-name: photo-9;
 }
 .transition_first10 {
-    view-transition-name: photo-example-10;
+    view-transition-name: photo-10;
 }
 .transition_first11 {
-    view-transition-name: photo-example-11;
+    view-transition-name: photo-11;
 }
 .transition_first12 {
-    view-transition-name: photo-example-12;
+    view-transition-name: photo-12;
 }
 .transition_first13 {
-    view-transition-name: photo-example-13;
+    view-transition-name: photo-13;
 }
 .transition_first14 {
-    view-transition-name: photo-example-14;
+    view-transition-name: photo-14;
 }
 .transition_first15 {
-    view-transition-name: photo-example-15;
+    view-transition-name: photo-15;
 }
 .transition_first16 {
-    view-transition-name: photo-example-16;
+    view-transition-name: photo-16;
 }
 
 ::view-transition-group(*) {
-    animation-duration: .4s;
+    animation-duration: .5s;
 }
 
 /* スライダー(splide)CSS */
