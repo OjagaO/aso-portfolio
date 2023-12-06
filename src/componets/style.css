@@ -1707,9 +1707,12 @@ body.active {
 .transition_first16 {
     view-transition-name: photo-16;
 }
+.transition_first17 {
+    view-transition-name: photo-17;
+}
 
 ::view-transition-group(*) {
-    animation-duration: .5s;
+    animation-duration: .4s;
 }
 
 /* スライダー(splide)CSS */

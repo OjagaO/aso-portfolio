@@ -150,6 +150,12 @@ const WorkPage = () => {
                                                 <span className="work-item-sentence">| microCMS Blog |</span>
                                             </p>
                                         </li>
+                                        <li className=" work-item">
+                                            <p id="demo17" className="work-item_p" onClick={() => openFunc("animatedModal17", "demo17")}>
+                                                <img src="./images/learn-share.webp" alt="thumbnail of site" className="transition_first17 photo_thumb"></img>
+                                                <span className="work-item-sentence">| 参考サイト共有アプリ |</span>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </SplideSlide>
                                 <SplideSlide>
@@ -1258,6 +1264,65 @@ const WorkPage = () => {
                             <div className="modal-img">
                                 {/* <img src="./images/screenshot-beautysalon.jpeg" alt=""></img> */}
                                 <img src="./images/micro-blog.webp" alt="thumbnail of site" className="transition_first16 photo_detail"></img>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="animatedModal17" className="all_modal" hidden>
+                        <div className="modal-content">
+                            <div className="modal-box">
+                                <div className="modal-title">
+                                    <h2>
+                                        参考サイト共有アプリ<br></br>
+                                        <a href="https://share-learning-url.vercel.app/" target="_blank" rel="noreferrer">
+                                            実際のサイトはこちら→
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div className="modal-info">
+                                    <dl>
+                                        <dt>◆作品概要</dt>
+                                        <dd>学びになったサイトを共有することが出来るアプリケーションになります。</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>◆制作の経緯と流れ</dt>
+                                        <dd>
+                                            友人たちと参考になるサイトをLINEにて共有していたのですが、OGPの幅でトーク履歴の読解性が下がったり、
+                                            後で見返す際にまとまっていた方がいいということで作成しました。
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>◆こだわり</dt>
+                                        <dd>
+                                            ・useNavigateを使用してユーザーにわかりやすいUXを心がけた点
+                                            <br></br>
+                                            ・申し訳程度にダークモードを実装した点（ダークモードの状態もlocalで保存しておけば良いかもしれない）
+                                            <br /><br />
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>◆改善点・苦労した点</dt>
+                                        <dd>
+                                            ・タグ等を実装して特定の分野の記事など絞り込みの機能の実装が行えるようになると良いように思う
+                                            <br></br>
+                                            ・上記と似ているが検索機能などで絞り込みが可能になると良いように思う
+                                            <br></br>
+                                            ・UIやデザインなど改善するべき点はいくらでも存在している。
+                                            <br></br>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>◆制作を通してのコメント</dt>
+                                        <dd>
+                                            今回は初めてFirebaseを触るということで基礎的なことしかできなかった為、改善点が数多く残ることとなりました。
+                                            ログイン機能が敷居を高めてしまうことは分かっていましたが想像以上に高く、ですが管理の観点から外すという判断をできずにいます。
+                                            今後友人たちが積極的に利用してくれるならと思うが、普通にQiitaやZennを見ればいいので需要はあまり無さそうです。
+                                            今後暇があれば自分用にアレンジしてさらに使いやすいものにしていけたらと思います。
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div className="modal-img">
+                                <img src="./images/learn-share.webp" alt="thumbnail of site" className="transition_first17 photo_detail"></img>
                             </div>
                         </div>
                     </div>
